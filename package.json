@@ -4,9 +4,9 @@
   "description": "Esports Dash Documentation",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && npm run postbuild",
     "start": "next start",
-    "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind"
+    "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind && cp -r ./public/_pagefind ./out"
   },
   "repository": {
     "type": "module",
