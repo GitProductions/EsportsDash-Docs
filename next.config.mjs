@@ -6,9 +6,9 @@ const withNextra = nextra({
 });
 
 export default withNextra({
-    // ... Other Next.js config options
     output: 'export',
     images: {
+        unoptimized: true,
         domains: ['img.youtube.com'],
       },
 });
