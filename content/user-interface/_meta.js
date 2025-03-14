@@ -1,4 +1,5 @@
 export default {
+    'introduction': 'Introduction',
     'match-tab': 'Match Tab 🚧',
     'showinfo-tab': 'Show Info 🚧',
     'bracket-tab': 'Bracket Tab 🚧',
