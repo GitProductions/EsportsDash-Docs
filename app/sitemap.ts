@@ -9,7 +9,6 @@ export default async function sitemap() {
   const pageMap = await getPageMap();
   const routes = [];
   
-  // Add root route
   routes.push({
     url: `${BASE_URL}/`,
     lastModified: new Date().toISOString(),
