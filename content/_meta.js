@@ -4,6 +4,7 @@ export default {
     'StreamDeck': 'Stream Deck Plugin',
     'Support': {
         title: 'Support',
+        type: 'page',
     },
     'Home': {
         title: 'Home',
