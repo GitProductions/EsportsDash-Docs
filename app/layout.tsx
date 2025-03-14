@@ -210,6 +210,12 @@ export default async function RootLayout({children}) {
             nextThemes={{
               defaultTheme: 'dark'
           }}
+          sidebar={{
+            defaultMenuCollapseLevel: 1, // Change this number to control the default collapse level
+            autoCollapse: true, // If true, automatically collapse inactive folders above defaultMenuCollapseLevel
+            toggleButton: true // Hide/show sidebar toggle button. Defaults to `false`
+          }}
+          feedback={{}}
         >
             {children}
         </Layout>
