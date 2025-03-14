@@ -9,7 +9,7 @@ export default {
     'Home': {
         title: 'Home',
         href: 'https://esportsdash.com',
-        'type': 'page'
+        type: 'page'
       },
     'Support': {
         'title': 'Support',

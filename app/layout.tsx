@@ -11,6 +11,7 @@ export const metadata = {
 
 const banner = <Banner storageKey="esportsdash-docs-construction-notice-1">🚧 Documentation is currently under construction. Check back for updates! 🚧</Banner>
 const navbar = (
+  
 <Navbar
   logo={
     <>
@@ -41,11 +42,26 @@ export default async function RootLayout({children}) {
             dir="ltr"
             // Suggested by `next-themes` package https://github.com/pacocoursey/next-themes#with-app
             suppressHydrationWarning
-        >
-        <Head
-            // ... Your additional head options
+            
             
         >
+        <Head
+            color={{
+              hue: 220,
+              saturation: {
+                light: 100,
+                dark: 80  // Lower saturation for dark mode to avoid brown tint
+              },
+              lightness: {
+                light: 40,
+                dark: 60  // Lower lightness value for dark mode
+              }
+            }}
+            
+        >
+    
+
+
             <link rel="shortcut icon" href="/images/general/icon.svg"/>
             {/* Your additional tags should be passed as `children` of `<Head>` element */}
         </Head>
@@ -56,7 +72,9 @@ export default async function RootLayout({children}) {
             pageMap={await getPageMap()}
             docsRepositoryBase="https://github.com/GitProductions/EsportsDash-Docs/tree/main"
             footer={footer}
-            // ... Your additional layout options
+            nextThemes={{
+              defaultTheme: 'dark'
+          }}
         >
             {children}
         </Layout>
