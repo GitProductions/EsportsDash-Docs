@@ -18,12 +18,16 @@ export default {
         title: 'Stream Deck Plugin'
     },
 
+
+
+
     'support': {
         title: 'Support',
         type: 'page',
     },
+
     'Home': {
-        title: 'Home',
+        title: 'EsportsDash',
         href: 'https://esportsdash.com',
         type: 'page'
     },
