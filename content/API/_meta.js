@@ -3,6 +3,6 @@ export default {
       title: 'Introduction'
     },
 
-    endpoints: '',
+    endpoints: 'Endpoints',
     'Test-API': 'TEST API'
     }
