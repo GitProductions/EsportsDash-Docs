@@ -4,9 +4,30 @@ import {getPageMap} from 'nextra/page-map'
 import 'nextra-theme-docs/style.css'
 import Link from "next/link";
 
+// export const metadata = {
+//     // Define your metadata here
+//     // For more information on metadata API, see: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
+// }
+
+
 export const metadata = {
-    // Define your metadata here
-    // For more information on metadata API, see: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
+  title: 'Documentation | EsportsDash',
+  description: 'Documentation for Esports Dash Scoreboard Tool',
+  metadataBase: 'https://docs.esportsdash.com',
+  openGraph: {
+    images: [
+      {
+        url: '/images/general/esportsdash-docs.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Esports Dash Documentation',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/images/general/esportsdash-docs.jpg'],
+  },
 }
 
 const banner = <Banner storageKey="esportsdash-docs-construction-notice-1">🚧 Documentation is currently under construction. Check back for updates! 🚧</Banner>
