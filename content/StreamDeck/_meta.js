@@ -1,8 +1,8 @@
 export default {
-    'Install-Plugin': {
+    'install-plugin': {
         title: 'Installing the Plugin'
     },
-    'StreamDeckControls': {
+    'streamdeck-controls': {
         title: 'Plugin Actions'
     }
 }

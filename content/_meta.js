@@ -1,4 +1,7 @@
 
+// need to lowercase all endpoints.. aka 'StreamDeck' -> 'streamdeck'
+// this is the docs.esportsdash.com/StreamDeck for example which is not good to have uppercase letters in the url
+
 export default {
     'index': 
     {
@@ -7,9 +10,13 @@ export default {
         //     sidebar: false // Hide sidebar on this page
         //   }
     },
-    'API': '',
+    'api': {
+        title: 'API ',
+    },
 
-    'StreamDeck': 'Stream Deck Plugin',
+    'streamdeck': {
+        title: 'Stream Deck Plugin'
+    },
 
     'support': {
         title: 'Support',
@@ -36,7 +43,9 @@ export default {
     //   )
     // },
 
-    'UserInterface': 'User Interface 🚧',
+    'user-interface': {
+        title: 'User Interface 🚧'
+    }
     
 
     

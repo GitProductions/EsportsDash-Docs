@@ -1,5 +1,5 @@
 export default {
-    Introduction: {
+    introduction: {
       title: 'Introduction'
     },
 
