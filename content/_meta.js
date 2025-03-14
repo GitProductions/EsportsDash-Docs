@@ -2,7 +2,7 @@ export default {
     'UserInterface': 'User Interface',
     'API': '',
     'StreamDeck': 'Stream Deck Plugin',
-    'Support': {
+    'support': {
         title: 'Support',
         type: 'page',
     },
