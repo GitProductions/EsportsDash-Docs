@@ -1,5 +1,231 @@
 ---
-title: StreamDeck Plugin
+title: Stream Deck Controls
+description: Complete guide to all available actions in the Esports Dash Stream Deck plugin
 ---
 
-#### Covering the various actions available in the StreamDeck Plugin
+import { Tabs, Table } from 'nextra/components'
+
+# Stream Deck Plugin Actions
+
+The Esports Dash Stream Deck plugin provides a variety of actions to control your broadcast directly from your Stream Deck, allowing for quick access to commonly used features.
+
+## Score Controls
+
+<Tabs items={['Adjust Score', 'Set Score', 'Reset Match']}>
+  <Tabs.Tab>
+  ### Increment/Decrement Score
+
+      - **Action Name**: Adjust Score
+      - **Description**: Quickly adjust a team's score up or down by one point.
+
+    
+    <Table>
+         <thead>
+           <Table.Tr>
+             <Table.Th>Parameter</Table.Th>
+             <Table.Th>Description</Table.Th>
+           </Table.Tr>
+         </thead>
+         <tbody>
+           <Table.Tr>
+             <Table.Td>**Team**</Table.Td>
+             <Table.Td>Select Team 1 or Team 2</Table.Td>
+           </Table.Tr>
+           <Table.Tr>
+             <Table.Td>**Direction**</Table.Td>
+             <Table.Td>Increment (+1) or Decrement (-1)</Table.Td>
+           </Table.Tr>
+           <Table.Tr>
+             <Table.Td>**Include Logo**</Table.Td>
+             <Table.Td>When checked, displays the team logo on the button</Table.Td>
+           </Table.Tr>
+           <Table.Tr>
+             <Table.Td>**Include Name**</Table.Td>
+             <Table.Td>When checked, displays the team name on the button</Table.Td>
+           </Table.Tr>
+           <Table.Tr>
+             <Table.Td>**Include Score**</Table.Td>
+             <Table.Td>When checked, displays the current score on the button</Table.Td>
+           </Table.Tr>
+         </tbody>
+       </Table>
+
+    ![Adjust Score](/images/streamdeck/action-score-increment.jpg "Adjust Team Score action")
+    
+
+     This action can be customized to show different combinations of team information on your Stream Deck button. For example, you could create a button that shows only the logo, or one that displays both the name and score.
+     </Tabs.Tab>
+     <Tabs.Tab>
+
+    ### Set Score
+    
+    - **Action Name**: Set Team Score
+    - **Description: Set a specific score value for a team.
+    <Table>
+      <thead>
+        <Table.Tr>
+          <Table.Th>Parameter</Table.Th>
+          <Table.Th>Description</Table.Th>
+        </Table.Tr>
+      </thead>
+      <tbody>
+        <Table.Tr>
+          <Table.Td>**Team**</Table.Td>
+          <Table.Td>Select Team 1 or Team 2</Table.Td>
+        </Table.Tr>
+        <Table.Tr>
+          <Table.Td>**Score**</Table.Td>
+          <Table.Td>Enter the desired score value</Table.Td>
+        </Table.Tr>
+        <Table.Tr>
+          <Table.Td>**Include Logo**</Table.Td>
+          <Table.Td>When checked, displays the team logo on the button</Table.Td>
+        </Table.Tr>
+        <Table.Tr>
+          <Table.Td>**Include Name**</Table.Td>
+          <Table.Td>When checked, displays the team name on the button</Table.Td>
+        </Table.Tr>
+        <Table.Tr>
+          <Table.Td>**Include Score**</Table.Td>
+          <Table.Td>When checked, displays the current score on the button</Table.Td>
+        </Table.Tr>
+      </tbody>
+    </Table>
+
+    ![Set Score](/images/streamdeck/action-score-set.jpg "Set Team Score action")
+
+  </Tabs.Tab>
+
+  <Tabs.Tab>
+    ### Reset Match
+    
+    Reset all match data to default values.
+
+    <Table>
+    <thead>
+      <Table.Tr>
+        <Table.Th>Parameter</Table.Th>
+        <Table.Th>Description</Table.Th>
+      </Table.Tr>
+    </thead>
+    <tbody>
+      <Table.Tr>
+        <Table.Td>**Force Update**</Table.Td>
+        <Table.Td>When checked, immediately resets match data without requiring confirmation in the dashboard</Table.Td>
+      </Table.Tr>
+    </tbody>
+  </Table>
+    
+    ![Reset Match](/images/streamdeck/action-match-reset.jpg "Reset Match action")
+
+
+  </Tabs.Tab>
+</Tabs>
+
+## Match Management
+
+<Tabs items={['Update Match', 'Swap Teams']}>
+  <Tabs.Tab>
+    ### Update Match Data
+
+    ![Update Match](/images/streamdeck/action-match-update.jpg "Update Match Data action")
+
+    
+    Refresh the match data from the current configuration.
+    
+    - **Action Name**: Update Match
+    - **Parameters**: None
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ### Swap Team Positions
+
+    ![Swap Teams](/images/streamdeck/action-score-set.jpg "Swap Teams action")
+
+    
+    Swap the positions of Team 1 and Team 2.
+    
+    <Table>
+        <thead>
+          <Table.Tr>
+            <Table.Th>Parameter</Table.Th>
+            <Table.Th>Description</Table.Th>
+          </Table.Tr>
+        </thead>
+        <tbody>
+          <Table.Tr>
+            <Table.Td>**Force Update**</Table.Td>
+            <Table.Td>When checked, immediately swaps teams on live overlay without requiring confirmation in the dashboard</Table.Td>
+          </Table.Tr>
+        </tbody>
+    </Table>
+    
+
+  </Tabs.Tab>
+</Tabs>
+
+## Team Management
+
+<Tabs items={['Select Team', 'Set Team Name']}>
+  <Tabs.Tab>
+    ### Select Team
+
+    ![Team Select](/images/streamdeck/action-teams-select.jpg "Select Team action")
+
+    
+    Select a team from the team list provided by the team manager.
+    
+    - **Action Name**: Select Team
+    - **Parameters**:
+      - **Team**: Select Team 1 or Team 2
+      - **Team Name**: The Name of the team to select
+    
+    This action allows you to quickly switch to any team saved in your Team Manager.
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ### Set Team Name
+
+        ![Set Team Name](/images/streamdeck/action-teams-setname.jpg "Set Team Name action")
+
+    Change a team's displayed name.
+    
+    - **Action Name**: Set Team Name
+    - **Parameters**:
+      - **Team**: Select Team 1 or Team 2
+      - **Name**: The new team name
+
+  </Tabs.Tab>
+</Tabs>
+
+## Window Controls
+
+        ![Window Controls](/images/streamdeck/action-windowcontrols.jpg "Set Window Controls")
+
+
+Control the Esports Dash application window state.
+
+| Action | Description |
+|--------|-------------|
+| Toggle Window | Show/hide the main window |
+| Minimize Window | Minimize to taskbar |
+| Close Window | Hide the main window |
+| Open Window | Show the main window |
+| Toggle Orientation | Switch between horizontal/vertical layouts |
+| Open Hotkey Manager | Open the hotkey configuration window |
+| Check for Updates   | Check for any updates for the main Esports Dash Application
+
+
+## Troubleshooting
+
+If actions aren't working properly:
+
+1. Make sure Esports Dash is running
+2. Check that the API connection is established (green indicator)
+3. Verify your Stream Deck software is updated to the latest version
+4. Restart both Esports Dash and Stream Deck if issues persist
+
+
+### Button Display Issues
+
+- **Custom Button Title Overriding Dynamic Content**: If you manually set a title for a button in Stream Deck, it will override any dynamic content the plugin tries to display (like team names or scores). Leave the title field empty to allow the plugin to display dynamic information.
+
+- **Buttons Not Updating**: If your buttons aren't showing updated information (like scores), try toggling the "Include Score" or other display options off and then on again.
