@@ -11,11 +11,11 @@ export default {
         href: 'https://esportsdash.com',
         type: 'page'
       },
-    'Support': {
-        'title': 'Support',
-        'type': 'page',
+    // 'Support': {
+    //     'title': 'Support',
+    //     'type': 'page',
           
-    },
+    // },
 
 }
 
