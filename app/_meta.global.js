@@ -19,12 +19,6 @@ export default {
 
   index: {
     title: '🚀 Getting Started',
-
-    //   title: '✨ Fruits',
-    //   items: {
-    //     apple: '🍎 Apple',
-    //     banana: '🍌 BaNaNa'
-    //   }
   },
 
   // API Documentation
@@ -71,10 +65,12 @@ export default {
     items: {
       'introduction': {
         title: 'Introduction',
+        display: 'hidden'
       },
 
       'match-tab': {
         title: 'Match Tab 🚧',
+        
       },
       
       'showinfo-tab': {
