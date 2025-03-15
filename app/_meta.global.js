@@ -5,21 +5,67 @@
 
 export default {
 
-  // blog: {
-  //   type: 'page',
-  //   title: 'Blog',
-  //   theme: {
-  //     sidebar: false,
-  //     layout: 'full',
-  //     typesetting: 'article'
-  //   }
-  //   // display: 'hidden',
-  // },
+
 
 
   index: {
     title: '🚀 Getting Started',
   },
+
+
+
+  // User Interface Docs
+  'user-interface': {
+    title: 'User Interface',
+    items: {
+      'introduction': {
+        title: 'Introduction',
+        // display: 'hidden'
+      },
+
+      'match-tab': {
+        title: 'Match Tab 🚧',
+
+      },
+
+      'showinfo-tab': {
+        title: 'Show Info 🚧',
+      },
+
+      'bracket-tab': {
+        title: 'Bracket Tab 🚧',
+      },
+
+      'obs-tab': {
+        title: 'OBS Tab 🚧',
+      },
+
+      'replay-tab': {
+        title: 'Replay Tab 🚧',
+      },
+
+      'teammanager-tab': {
+        title: 'Team Manager 🚧'
+      },
+
+    }
+  },
+
+  // Stream Deck Docs
+  streamdeck: {
+    title: 'Stream Deck',
+    items: {
+
+      'streamdeck-installation': {
+        title: 'Introduction',
+      },
+
+      'streamdeck-controls': {
+        title: 'Controls',
+      }
+    },
+  },
+
 
   // API Documentation
   api: {
@@ -41,60 +87,15 @@ export default {
   },
 
 
-  // Stream Deck Docs
-  streamdeck: {
-    title: 'Stream Deck',
-    items: {
 
-      'streamdeck-installation': {
-        title: 'Introduction',
-      },
 
-      'streamdeck-controls': {
-        title: 'Controls',
-      }
-    },
+  'install-game-configs': {
+    title: '',
   },
 
 
 
 
-  // User Interface Docs
-  'user-interface': {
-    title: 'User Interface',
-    items: {
-      'introduction': {
-        title: 'Introduction',
-        // display: 'hidden'
-      },
-
-      'match-tab': {
-        title: 'Match Tab 🚧',
-        
-      },
-      
-      'showinfo-tab': {
-        title: 'Show Info 🚧',
-      },
-
-      'bracket-tab': {
-        title: 'Bracket Tab 🚧',
-      },
-
-      'obs-tab': {
-        title: 'OBS Tab 🚧',
-      },
-
-      'replay-tab': {
-        title: 'Replay Tab 🚧',
-      },
-
-      'teammanager-tab': {
-        title: 'Team Manager 🚧'
-        },
-
-      }
-  },
 
 
 
@@ -117,5 +118,14 @@ export default {
         href: 'mailto:hi@example.com'
       },
     }
+  },
+
+  support: {
+    title: 'Support',
+    type: 'page',
+    theme: {
+      layout: 'full',
+    }
+
   },
 }
