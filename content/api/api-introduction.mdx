@@ -1,0 +1,44 @@
+---
+title: Introduction
+---
+
+import { Cards } from 'nextra/components'
+import { Monitor, Users, Settings } from 'lucide-react'
+
+
+## API Endpoint Introduction
+
+Welcome to the API documentation for Esports Dash! This API provides a simple and powerful way to manage window controls, team data, and application settings programmatically.
+
+All endpoints are accessible via the base URL: **`http://localhost:8080/api`**. The API is organized into three main categories, each designed for a specific purpose:
+
+
+
+### Getting Started
+To use the API, send HTTP requests (primarily `GET` methods) to the endpoints listed in the sections below. Each endpoint is designed to be straightforward, with clear parameters and responses. For example:
+- Toggle the main window: `GET http://localhost:8080/api/window/toggleWindow`
+- Update a team score: `GET http://localhost:8080/api/team/setScore?team=1&score=5`
+
+**Quick Test**: Since these are `GET` requests, you can easily test them directly in your browser! Just paste the URL (e.g., `http://localhost:8080/api/window/toggleWindow`) into your browser’s address bar and hit enter—assuming the Esports Dash app is running locally on port `8080`.
+
+Dive into the sections below for detailed endpoint descriptions, parameters, and examples!
+<Cards>
+  <Cards.Card
+    icon={<Monitor />}
+    title="Window Actions"
+    href="endpoints#window-actions"
+    description="Control the application's window states and utilities."
+  />
+  <Cards.Card
+    icon={<Users />}
+    title="Team Actions"
+    href="endpoints#team-actions"
+    description="Manage team-related data like scores, names, and logos."
+  />
+  <Cards.Card
+    icon={<Settings />}
+    title="App Actions"
+    href="endpoints#app-actions"
+    description="Adjust application-wide settings and configurations."
+  />
+</Cards>
