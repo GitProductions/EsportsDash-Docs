@@ -2,8 +2,33 @@
 // need to lowercase all endpoints.. aka 'StreamDeck' -> 'streamdeck'
 // this is the docs.esportsdash.com/StreamDeck for example which is not good to have uppercase letters in the url
 
+
 export default {
-    'index': 
+
+    // Top level navigation
+    website: {
+        title: 'Website',
+        type: 'menu',
+        items: {
+
+            'Home': {
+                title: 'EsportsDash',
+                href: 'https://esportsdash.com',
+            },
+            download: {
+                title: 'Download Esports Dash',
+                href: 'https://esportsdash.com/downloads',
+            },
+            contact: {
+                title: 'Contact Us',
+                href: 'mailto:hi@example.com'
+            },
+        }
+    },
+
+
+    // Sidebar navigation
+    'index':
     {
         title: 'Getting Started 🚀',
         // theme: {
@@ -18,19 +43,11 @@ export default {
         title: 'Stream Deck Plugin'
     },
 
+    'user-interface': {
+        title: 'User Interface 🚧'
+    }
+   
 
-
-
-    'support': {
-        title: 'Support',
-        type: 'page',
-    },
-
-    'Home': {
-        title: 'EsportsDash',
-        href: 'https://esportsdash.com',
-        type: 'page'
-    },
 
 
     // this is some sort of seperator thats based on a folder/mdxx but when you use it as such it doesnt render it??
@@ -47,10 +64,7 @@ export default {
     //   )
     // },
 
-    'user-interface': {
-        title: 'User Interface 🚧'
-    }
-    
 
-    
+
+
 }
