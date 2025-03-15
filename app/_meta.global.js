@@ -65,7 +65,7 @@ export default {
     items: {
       'introduction': {
         title: 'Introduction',
-        display: 'hidden'
+        // display: 'hidden'
       },
 
       'match-tab': {
