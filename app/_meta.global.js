@@ -5,6 +5,17 @@
 
 export default {
 
+  // blog: {
+  //   type: 'page',
+  //   title: 'Blog',
+  //   theme: {
+  //     sidebar: false,
+  //     layout: 'full',
+  //     typesetting: 'article'
+  //   }
+  //   // display: 'hidden',
+  // },
+
 
   index: {
     title: '🚀 Getting Started',
@@ -23,6 +34,7 @@ export default {
 
       'api-introduction': {
         title: 'Introduction',
+        // display: 'hidden',
       },
 
       'api-endpoints': {
