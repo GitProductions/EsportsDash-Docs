@@ -67,25 +67,7 @@ export default {
   },
 
 
-  // API Documentation
-  api: {
-    title: 'API',
-    items: {
-
-      'api-introduction': {
-        title: 'Introduction',
-        // display: 'hidden',
-      },
-
-      'api-endpoints': {
-        title: 'Endpoints',
-      },
-
-
-
-    }
-  },
-
+ 
 
 
   overlays: {
@@ -112,6 +94,25 @@ export default {
     title: 'Game Configs',
   },
 
+
+   // API Documentation
+   api: {
+    title: 'API',
+    items: {
+
+      'api-introduction': {
+        title: 'Introduction',
+        // display: 'hidden',
+      },
+
+      'api-endpoints': {
+        title: 'Endpoints',
+      },
+
+
+
+    }
+  },
 
 
 
