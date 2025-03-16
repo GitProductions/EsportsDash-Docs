@@ -88,9 +88,28 @@ export default {
 
 
 
+  overlays: {
+    title: 'Overlays',
+    items: {
+
+      introduction: {
+        title: 'Introduction',
+      },
+
+      default: {
+        title: 'Default Overlay',
+        items: {
+          'available-scenes': {
+            title: 'Available Scenes',
+          },
+         
+        }
+      },
+    }
+  },
 
   'install-game-configs': {
-    title: '',
+    title: 'Game Configs',
   },
 
 
