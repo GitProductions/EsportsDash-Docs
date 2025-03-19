@@ -1,0 +1,137 @@
+/* Base container */
+.interactive-doc-container {
+    width: 100%;
+  }
+  
+  .interactive-doc-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .interactive-doc-description {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Image container */
+  .interactive-doc-image-container {
+    border: 1px solid #e5e5e5;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  
+  .interactive-doc-relative-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  /* Overlay and hotspots */
+  .interactive-doc-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .interactive-doc-hotspot {
+    position: absolute;
+    cursor: pointer;
+  }
+  
+  .interactive-doc-highlight-box {
+    position: absolute;
+    inset: 0;
+    border: 2px solid rgba(59, 130, 246, 0.7);
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+    background-color: transparent;
+  }
+  
+  .interactive-doc-highlight-box:hover {
+    background-color: rgba(59, 130, 246, 0.4);
+  }
+  
+  .interactive-doc-highlight-box.active {
+    border-color: rgb(59, 130, 246);
+    background-color: rgba(59, 130, 246, 0.2);
+  }
+  
+  /* Number indicator */
+  .interactive-doc-number {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background-color: rgba(59, 130, 246, 0.7);
+    color: white;
+    top: -10px;
+    left: -10px;
+    transition: all 0.2s ease;
+    z-index: 5;
+  }
+  
+  .interactive-doc-number.active {
+    background-color: rgb(59, 130, 246);
+  }
+  
+  /* Tooltip */
+  .interactive-doc-tooltip {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5rem;
+    /* padding: 0.5rem; */
+    background-color: white;
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    /* border: 1px solid #e5e5e5; */
+    font-size: 0.875rem;
+    z-index: 10;
+    width: 12rem;
+  }
+  
+  .interactive-doc-tooltip-title {
+    /* color: black; */
+    padding:0.2rem;
+    background-color: black;
+
+    font-weight: 500;
+  }
+  
+  .interactive-doc-tooltip-description {
+    padding:0.5rem;
+
+    color: #666;
+    margin-top: 0.25rem;
+  }
+  
+  /* Learn more link */
+  .interactive-doc-learn-more {
+    padding-left:0.5rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .interactive-doc-learn-more-text {
+    color: rgb(59, 130, 246);
+    margin-left: 0.25rem;
+    cursor: pointer;
+  }
+  
+  .interactive-doc-learn-more-text:hover {
+    text-decoration: underline;
+  }
+  
+  /* Footer */
+  .interactive-doc-footer {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+  }

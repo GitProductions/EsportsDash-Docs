@@ -2,4 +2,68 @@
 title: Show Info
 ---
 
-## Currently Under Construction
+import { Cards } from 'nextra/components'
+import  InteractiveDocImage  from '../../../components/InteractiveImage'
+
+
+## Show Info Tab
+
+<InteractiveDocImage 
+  src="/images/user-interface/showinfo-tab/showinfo-tab.png"
+  alt="Show Info Tab Interface"
+  title="Show Info Tab"
+  description="Click on the numbered indicators to learn more about specific features in the interface."
+  hotspots={[
+    {
+      top: 14,
+      left: 6,
+      width: 17,
+      height: 25,
+      tooltip: "Caster Names",
+      description: "Set the casters names for the match",
+      href: "#caster-names"
+    },
+    {
+      top: 38,
+      left: 6,
+      width: 17,
+      height: 13,
+      tooltip: "Host Name",
+      description: "Set the hosts name for the match/tournament",
+      href: "#host-names"
+    },
+    {
+      top: 45,
+      left: 50,
+      width: 20,
+      height: 15,
+      tooltip: "WORK IN PROGRESS",
+      description: "",
+      href: "#"
+    }
+  ]}
+/>
+
+
+
+### Caster Names
+
+Casters (also known as commentators) provide play-by-play and analysis during matches. Enter their names in this section to have them displayed in your broadcast overlay.
+
+#### Where Caster Names Appear
+| Scene | Description |
+|-------|-------------|
+| [trioCamRow](/overlays/default/available-scenes#triocam-row) | Three-person camera layout with names |
+| [analystSpecial](/overlays/default/available-scenes#analyst-special) | Analysis desk layout with caster names |
+| [duo single-cam](/overlays/default/available-scenes#duo-single-cam) | Two-person single camera view |
+| [duoCamRow](/overlays/default/available-scenes#duocam-row) | Two-person camera layout with names |
+
+### Host Names
+
+The host typically leads the broadcast, introducing segments and facilitating transitions. Enter the host's name in this field to display it in relevant scenes.
+
+#### Where Host Names Appear
+| Scene | Description |
+|-------|-------------|
+| [trioCamRow](/overlays/default/available-scenes#triocam-row) | Can feature the host as part of the trio |
+| [analystSpecial](/overlays/default/available-scenes#analyst-special) | Shows host name at the analysis desk |
