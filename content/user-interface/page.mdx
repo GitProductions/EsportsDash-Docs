@@ -1,0 +1,26 @@
+---
+title: All Fruits
+sidebarTitle: 🍒 Fruits
+asIndexPage: true
+---
+
+import { Cards } from 'nextra/components'
+import { TerminalIcon, TypeScriptIcon } from 'nextra/icons'
+import { MDXRemote } from 'nextra/mdx-remote'
+import { createIndexPage, getPageMap } from 'nextra/page-map'
+
+# Advanced
+
+<MDXRemote
+  compiledSource={await createIndexPage(await getPageMap('/user-interface'))}
+  components={{
+    Cards,
+    TerminalIcon,
+    TerminalIcon,
+    TerminalIcon,
+    TerminalIcon,
+    TerminalIcon,
+    TerminalIcon,
+    TerminalIcon
+  }}
+/>

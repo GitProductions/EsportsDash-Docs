@@ -20,9 +20,96 @@ export default {
   index: {
     title: '🚀 Getting Started',
   },
+<<<<<<< Updated upstream
 
   // API Documentation
   api: {
+=======
+  // User Interface Docs
+  'user-interface': {
+    title: 'User Interface',
+    items: {
+      // 'introduction': {
+      //   title: 'Introduction',
+      //   // display: 'hidden'
+      // },
+      
+
+    //   'match-tab': {
+    //     title: 'Match Tab 🚧',
+
+    //   },
+
+    //   'show-info-tab': {
+    //     title: 'Show Info 🚧',
+    //   },
+
+      'bracket-tab': {
+        title: 'Bracket Tab 🚧',
+      },
+
+    //   'obs-tab': {
+    //     title: 'OBS Tab 🚧',
+    //   },
+
+    //   'replay-tab': {
+    //     title: 'Replay Tab 🚧',
+    //   },
+
+    //   'team-manager-tab': {
+    //     title: 'Team Manager 🚧'
+    //   },
+
+    }
+  },
+
+  // Stream Deck Docs
+  streamdeck: {
+    title: 'Stream Deck',
+    items: {
+
+      'streamdeck-installation': {
+        title: 'Introduction',
+      },
+
+      'streamdeck-controls': {
+        title: 'Controls',
+      }
+    },
+  },
+
+
+ 
+
+
+  overlays: {
+    title: 'Overlays',
+    items: {
+
+      introduction: {
+        title: 'Introduction',
+      },
+
+      default: {
+        title: 'Default Overlay',
+        items: {
+          'available-scenes': {
+            title: 'Available Scenes',
+          },
+         
+        }
+      },
+    }
+  },
+
+  'install-game-configs': {
+    title: 'Game Configs',
+  },
+
+
+   // API Documentation
+   api: {
+>>>>>>> Stashed changes
     title: 'API',
     items: {
 
