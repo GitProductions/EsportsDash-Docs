@@ -65,11 +65,6 @@ export default {
   overlays: {
     title: 'Overlays',
     items: {
-
-      // introduction: {
-      //   title: 'Introduction',
-      // },
-
       default: {
         title: 'Default Overlay',
         items: {
@@ -89,12 +84,6 @@ export default {
   api: {
     title: 'API',
     items: {
-
-      // 'api-introduction': {
-      //   title: 'Introduction',
-      //   // display: 'hidden',
-      // },
-
       'api-endpoints': {
         title: 'Endpoints',
       },
