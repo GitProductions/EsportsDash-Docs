@@ -26,22 +26,23 @@ async function checkMdxLinks(directory = './content') {
   async function extractLinksFromMdx(filePath) {
     try {
       const content = await fs.readFile(filePath, 'utf-8');
-      // Match both external (http/https) and internal links with line numbers
       const lines = content.split('\n');
       const links = [];
-
+  
       lines.forEach((line, index) => {
+        // Skip lines that are MDX comments
+        if (line.trim().startsWith('{/*')) return;
+        
         const urlRegex = /\[.*?\]\(((?:https?:\/\/|\/)[^\s)]+)\)/g;
         let match;
         while ((match = urlRegex.exec(line)) !== null) {
           links.push({
             url: match[1],
-            lineNumber: index + 1,
-            lineContent: line.trim()
+            lineNumber: index + 1
           });
         }
       });
-
+  
       return links;
     } catch (error) {
       console.error(`Error reading ${filePath}:`, error);

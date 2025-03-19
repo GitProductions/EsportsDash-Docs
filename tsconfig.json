@@ -33,7 +33,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "app/utils/linkChecker.js"  ],
   "exclude": [
     "node_modules"
   ]
