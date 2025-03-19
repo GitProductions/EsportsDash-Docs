@@ -42,18 +42,18 @@
   .interactive-doc-highlight-box {
     position: absolute;
     inset: 0;
-    border: 2px solid rgba(59, 130, 246, 0.7);
+    border: 2px dashed rgb(255, 238, 0);
     border-radius: 0.375rem;
     transition: all 0.2s ease;
     background-color: transparent;
   }
   
   .interactive-doc-highlight-box:hover {
-    background-color: rgba(59, 130, 246, 0.4);
+    background-color: rgba(189, 255, 8, 0.4);
   }
   
   .interactive-doc-highlight-box.active {
-    border-color: rgb(59, 130, 246);
+    border-color: rgb(0, 0, 0);
     background-color: rgba(59, 130, 246, 0.2);
   }
   
@@ -68,8 +68,8 @@
     border-radius: 50%;
     font-size: 0.875rem;
     font-weight: 500;
-    background-color: rgba(59, 130, 246, 0.7);
-    color: white;
+    background-color:  rgb(229, 255, 0);
+    color: rgb(0, 0, 0);
     top: -10px;
     left: -10px;
     transition: all 0.2s ease;
@@ -77,7 +77,8 @@
   }
   
   .interactive-doc-number.active {
-    background-color: rgb(59, 130, 246);
+    background-color: rgb(14, 14, 14);
+    color: rgb(255, 255, 255);
   }
   
   /* Tooltip */
