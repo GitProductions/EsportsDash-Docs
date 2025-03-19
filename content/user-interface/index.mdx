@@ -8,6 +8,8 @@ import { Cards, Callout } from 'nextra/components'
 import { InformationCircleIcon, LinkIcon, MarkdownIcon } from 'nextra/icons'
 import { MDXRemote } from 'nextra/mdx-remote'
 import { createIndexPage, getPageMap } from 'nextra/page-map'
+import { ConstructionIcon } from 'lucide-react'
+
 
 # User Interface
 
@@ -22,7 +24,8 @@ The Esports Dash interface is designed to be intuitive and efficient for live br
   compiledSource={await createIndexPage(await getPageMap('/user-interface'))}
   components={{
     Cards,
-  //  InformationCircleIcon,
+    LinkIcon,
+    ConstructionIcon
   //  LinkIcon,
   //  MarkdownIcon,
   //  StarsIcon,
