@@ -25,7 +25,8 @@
     "module": "esnext",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@components/*": ["components/*"]
     }
   },
   "include": [

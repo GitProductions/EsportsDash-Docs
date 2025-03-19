@@ -15,12 +15,6 @@ export default {
   'user-interface': {
     title: 'User Interface',
     items: {
-      'introduction': {
-        title: 'Introduction',
-        // display: 'hidden'
-      },
-      
-
       'match-tab': {
         title: 'Match Tab 🚧',
 
@@ -55,26 +49,26 @@ export default {
     items: {
 
       'streamdeck-installation': {
-        title: 'Introduction',
+        title: '',
       },
 
       'streamdeck-controls': {
-        title: 'Controls',
+        title: '',
       }
     },
   },
 
 
- 
+
 
 
   overlays: {
     title: 'Overlays',
     items: {
 
-      introduction: {
-        title: 'Introduction',
-      },
+      // introduction: {
+      //   title: 'Introduction',
+      // },
 
       default: {
         title: 'Default Overlay',
@@ -82,26 +76,24 @@ export default {
           'available-scenes': {
             title: 'Available Scenes',
           },
-         
+
         }
       },
     }
   },
 
-  'install-game-configs': {
-    title: 'Game Configs',
-  },
 
 
-   // API Documentation
-   api: {
+
+  // API Documentation
+  api: {
     title: 'API',
     items: {
 
-      'api-introduction': {
-        title: 'Introduction',
-        // display: 'hidden',
-      },
+      // 'api-introduction': {
+      //   title: 'Introduction',
+      //   // display: 'hidden',
+      // },
 
       'api-endpoints': {
         title: 'Endpoints',
@@ -110,6 +102,11 @@ export default {
 
 
     }
+  },
+
+
+  'install-game-configs': {
+    title: 'Game Configs',
   },
 
 
