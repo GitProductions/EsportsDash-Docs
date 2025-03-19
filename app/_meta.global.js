@@ -11,9 +11,6 @@ export default {
   index: {
     title: '🚀 Getting Started',
   },
-
-
-
   // User Interface Docs
   'user-interface': {
     title: 'User Interface',
@@ -22,13 +19,14 @@ export default {
         title: 'Introduction',
         // display: 'hidden'
       },
+      
 
       'match-tab': {
         title: 'Match Tab 🚧',
 
       },
 
-      'showinfo-tab': {
+      'show-info-tab': {
         title: 'Show Info 🚧',
       },
 
@@ -44,7 +42,7 @@ export default {
         title: 'Replay Tab 🚧',
       },
 
-      'teammanager-tab': {
+      'team-manager-tab': {
         title: 'Team Manager 🚧'
       },
 
