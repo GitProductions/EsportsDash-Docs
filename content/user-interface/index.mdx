@@ -1,0 +1,32 @@
+---
+title: User Interface Introduction
+description: Learn about the Esports Dash user interface and its core components
+asIndexPage: true
+---
+
+import { Cards, Callout } from 'nextra/components'
+import { InformationCircleIcon, LinkIcon, MarkdownIcon } from 'nextra/icons'
+import { MDXRemote } from 'nextra/mdx-remote'
+import { createIndexPage, getPageMap } from 'nextra/page-map'
+
+# User Interface
+
+The Esports Dash interface is designed to be intuitive and efficient for live broadcast operations. 
+<br/>Here are the the tabs available in the interface:
+
+<Callout type="warning">
+  **Note**: The interface Documentation is currently under construction. Check back for updates!
+</Callout>
+
+<MDXRemote
+  compiledSource={await createIndexPage(await getPageMap('/user-interface'))}
+  components={{
+    Cards,
+  //  InformationCircleIcon,
+  //  LinkIcon,
+  //  MarkdownIcon,
+  //  StarsIcon,
+  //  BrushIcon,
+  //  GlobeIcon
+  }}
+/>

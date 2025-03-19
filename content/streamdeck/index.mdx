@@ -1,0 +1,23 @@
+---
+title: Stream Deck Plugin
+description: Learn how to install and use the Esports Dash Stream Deck plugin
+asIndexPage: true
+---
+
+import { Cards, Callout } from 'nextra/components'
+import { InformationCircleIcon, LinkIcon, MarkdownIcon } from 'nextra/icons'
+import { MDXRemote } from 'nextra/mdx-remote'
+import { createIndexPage, getPageMap } from 'nextra/page-map'
+
+# Stream Deck Plugin
+
+The Esports Dash Stream Deck plugin allows you to control various aspects of your Esports Dash directly from your Stream Deck device.
+
+
+
+<MDXRemote
+  compiledSource={await createIndexPage(await getPageMap('/streamdeck'))}
+  components={{
+    Cards
+  }}
+/>
