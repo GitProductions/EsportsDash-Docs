@@ -13,7 +13,7 @@ import { Callout, Tabs } from 'nextra/components'
 # Main Window
 
 The 'main window' would be defined as the 'frame' of the application.<br/>
-This would include the [sidebar](#side-navigation), [top navigation](#top-navigation) and the [footer](#status-bar--notifications).
+This would include the [sidebar](#side-navigation), [top navigation](#top-navigation) [footer](#status-bar--notifications) and the main [content](#content-area).
 <br/>
 
 
@@ -50,6 +50,17 @@ This would include the [sidebar](#side-navigation), [top navigation](#top-naviga
       tooltip: "Status Bar & Notifications",
       description: "Displays messages for various app actions, & also on other various notifications for connections etc.",
       href: "#status-bar-notifications",
+      tooltipPosition: "top"
+    },
+
+    {
+      top: 10,
+      left: 15,
+      width: 84,
+      height: 83,
+      tooltip: "Content Area",
+      description: "This is the main content area where the selected tab's content is displayed.",
+      href: "#content-area",
       tooltipPosition: "top"
     },
 
@@ -99,7 +110,7 @@ This would include the [sidebar](#side-navigation), [top navigation](#top-naviga
 
 {/* ## Navigation & Controls */}
 
-<Tabs items={['Side Navigation', 'Top Navigation', 'Status Bar']}>
+<Tabs items={['Side Navigation', 'Top Navigation', 'Status Bar', 'Content Area']}>
 
   {/* SIDE NAVIGATION */}
   <Tabs.Tab>
@@ -168,6 +179,13 @@ This would include the [sidebar](#side-navigation), [top navigation](#top-naviga
       The status bar provides real-time feedback about your actions and connection states.
     </Callout>
   </Tabs.Tab>
+
+
+  {/* CONTENT AREA */}
+  <Tabs.Tab>
+    ### Content Area
+    The main content area is where the selected tab's content is displayed. This area will change based on the selected tab from the side navigation.
+    </Tabs.Tab>
 </Tabs>
 
 {/* ### Team Management
