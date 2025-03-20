@@ -68,6 +68,9 @@ const InteractiveDocImage = ({
                 >
                   <div 
                     className={`interactive-doc-highlight-box ${activeHotspot === index ? 'active' : ''}`}
+                    // onMouseEnter={() => setActiveHotspot(index)}
+                    // onMouseLeave={() => setActiveHotspot(null)}
+
                     onClick={() => {
                       setActiveHotspot(index === activeHotspot ? null : index);
                       if (hotspot.onClick) hotspot.onClick();
@@ -109,7 +112,7 @@ const InteractiveDocImage = ({
       </div>
 
       <div className="interactive-doc-footer">
-        <p>Hover over or click on a numbered area to see more information.</p>
+        <p>Click on a numbered area to see more information.</p>
       </div>
     </div>
   );
