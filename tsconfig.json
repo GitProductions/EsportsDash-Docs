@@ -25,16 +25,22 @@
     "module": "esnext",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"],
-      "@components/*": ["components/*"]
-    }
+      "@/*": [
+        "./*"
+      ],
+      "@components/*": [
+        "components/*"
+      ]
+    },
+    "strictNullChecks": true
   },
   "include": [
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "app/utils/linkChecker.js"  ],
+    "**/*.tsx",
+    "app/utils/linkChecker.js"
+  ],
   "exclude": [
     "node_modules"
   ]
