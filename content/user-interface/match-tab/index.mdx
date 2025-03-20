@@ -4,6 +4,9 @@ description: Learn how to use the Match Tab in Esports Dash
 icon: LinkIcon
 ---
 
+{/* we could make a custom file, a mdx file that holds to 'documentaiton' part of each section of the interface? */}
+import  InteractiveDocImage  from '@components/InteractiveImage'
+
 # Match Tab
 
 The Match Tab is your primary interface for managing game configurations and match settings. Let's walk through the initial setup and basic usage.
@@ -14,7 +17,44 @@ The Match Tab is your primary interface for managing game configurations and mat
 
 After the configuration is downloaded, you'll see the main Match Tab interface:
 
-{/* ![Fresh Match Tab](/images/user-interface/match-tab/match-tab-fresh.png) */}
+
+<InteractiveDocImage 
+  src="/images/user-interface/match-tab/match-tab-fresh.png"
+  alt="Match Tab Interface"
+  title="Match Tab"
+  description=""
+  hotspots={[
+    {
+      top: 10,
+      left: 1,
+      width: 13,
+      height: 40,
+      tooltip: "Side Navigation",
+      description: "The side navigation allows you to quickly switch between different sections the dashboard",
+      href: "#side-navigation"
+    },
+    {
+      top: 3,
+      left: 43.7,
+      width: 17,
+      height: 7,
+      tooltip: "Match Tab Controls",
+      description: "The Update, Swap & Reset buttons are used within the match tab specifically.",
+      href: "#match-tab-controls"
+    },
+    {
+      top: 3,
+      left: 80,
+      width: 19,
+      height: 7,
+      tooltip: "Game Config Selection",
+      description: "You can select the game config needed for the match and also download additional game configs as well as the default overlay.",
+      href: "#",
+       tooltipPosition: "left" 
+    }
+  ]}
+/>
+
 
 The Match Tab provides several key features:
 - Team name and score management
