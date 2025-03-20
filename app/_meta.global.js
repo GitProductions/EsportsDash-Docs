@@ -15,6 +15,7 @@ export default {
   'user-interface': {
     title: 'User Interface',
     items: {
+      'main-window':'',
       'match-tab': {
         title: 'Match Tab 🚧',
 

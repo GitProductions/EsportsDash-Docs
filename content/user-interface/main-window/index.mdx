@@ -1,0 +1,186 @@
+---
+title: Main Window 🚧
+description: Learn about the main window controls in Esports Dash
+icon: LinkIcon
+---
+
+{/* we could make a custom file, a mdx file that holds to 'documentaiton' part of each section of the interface? */}
+import  InteractiveDocImage  from '@components/InteractiveImage'
+import Link from "next/link";
+import { Callout, Tabs } from 'nextra/components'
+
+
+# Main Window
+
+The 'main window' would be defined as the 'frame' of the application.<br/>
+This would include the [sidebar](#side-navigation), [top navigation](#top-navigation) and the [footer](#status-bar--notifications).
+<br/>
+
+
+<InteractiveDocImage 
+  src="/images/user-interface/match-tab/match-tab-fresh.png"
+  alt="Match Tab Interface"
+  description=""
+  hotspots={[
+    {
+      top: 5,
+      left: 0.2,
+      width: 13,
+      height: 85,
+      tooltip: "Side Navigation",
+      description: "The side navigation allows you to quickly switch between different sections the dashboard",
+      href: "#side-navigation",
+      tooltipPosition: "right"
+    },
+    {
+      top: 0,
+      left: 80,
+      width: 20,
+      height: 5,
+      tooltip: "Top Bar",
+      description: "This top section contains the close, minimize, options, pinned window & orientation buttons.",
+      href: "#top-navigation"
+    },
+
+    {
+      top: 94,
+      left: 0.8,
+      width: 99,
+      height: 6,
+      tooltip: "Status Bar & Notifications",
+      description: "Displays messages for various app actions, & also on other various notifications for connections etc.",
+      href: "#status-bar-notifications",
+      tooltipPosition: "top"
+    },
+
+
+  ]}
+/>
+
+{/* <InteractiveDocImage 
+  src="/images/user-interface/match-tab/match-tab-fresh.png"
+  alt="Match Tab Interface"
+  description=""
+  hotspots={[
+    {
+      top: 10,
+      left: 1,
+      width: 13,
+      height: 40,
+      tooltip: "Side Navigation",
+      description: "The side navigation allows you to quickly switch between different sections the dashboard",
+      href: "#side-navigation"
+    },
+    {
+      top: 3,
+      left: 43.7,
+      width: 17,
+      height: 7,
+      tooltip: "Match Tab Controls",
+      description: "The Update, Swap & Reset buttons are used within the match tab specifically.",
+      href: "#match-tab-controls"
+    },
+    {
+      top: 3,
+      left: 80,
+      width: 19,
+      height: 7,
+      tooltip: "Game Config Selection",
+      description: "You can select the game config needed for the match and also download additional game configs as well as the default overlay.",
+      href: "#game-config-selection",
+       tooltipPosition: "left" 
+    }
+  ]}
+/> */}
+
+
+
+## Main Window Sections
+
+{/* ## Navigation & Controls */}
+
+<Tabs items={['Side Navigation', 'Top Navigation', 'Status Bar']}>
+
+  {/* SIDE NAVIGATION */}
+  <Tabs.Tab>
+    ### Side Navigation
+    The side navigation bar serves as your primary hub for accessing all major features of Esports Dash. It can be collapsed by clicking the menu header to maximize workspace when needed.
+    
+    <br/><small>Click to learn more about each section</small>
+    - [**Match Tab**](/user-interface/match-tab) 🎮 - Configure game settings, teams, and match details
+    - [**Show Info**](/user-interface/show-info) ℹ️ - Manage broadcast information and caster details
+    - [**Bracket Tab**](/user-interface/bracket-tab) 🏆 - Handle tournament brackets and match progression
+    - [**OBS Tab**](/user-interface/obs-tab) 📺 - Link OBS Studio sources to data within the dashboard for automatic updates for custom overlays.
+    - [**Replay Tab**](/user-interface/replay-tab) 🔄 - Manage replay functionality and clips
+    - [**Team Manager**](/user-interface/team-manager-tab) 👥 - Organize team rosters and player information
+
+    <Callout>
+      The navigation bar can be minimized to give you more workspace while maintaining quick access to all features.
+    </Callout>
+  </Tabs.Tab>
+
+
+
+
+
+  {/* TOP NAVIGATION */}
+  <Tabs.Tab>
+    ### Top Navigation
+    Located at the top-right of the application window, these controls help you manage the application window:
+
+    - **Close Button** ❌ - Minimizes the application to system tray instead of closing completely
+    - **Minimize Button** 🔽 - Reduces the window to taskbar
+    - **Options Button** ⚙️ - Access essential features:
+      - Export/Import match data
+      - Hotkey Manager
+      - View application logs
+      - Open tutorial - Re-visit the in app guided tutorial
+      - Help menu:
+        - Check for updates
+        - Documentation
+        - Discord community
+        - Send feedback 
+        - About window
+    - **Pin Window** 📌 - Forces the window to stay on top of all other windows, including fullscreen applications like games
+    - **Orientation** 🔄 - Switch between:
+      - Horizontal layout (optimized for 1080p vertical monitors)
+      - Vertical layout (predefined size for compact viewing)
+
+    <Callout>
+      The Pin Window feature is particularly useful for making quick adjustments during gameplay without alt-tabbing.
+    </Callout>
+  </Tabs.Tab>
+
+
+
+
+  {/* STATUS BAR */}
+  <Tabs.Tab>
+    ### Status Bar & Notifications
+    Located at the bottom of the application window:
+
+    - **Status Bar**(LeftSide) - Status bar displays messages for various application actions, like updating the overlay
+    - **Connection Status Indicator**(RightSide) - Shows the connection status of:
+      - StreamDeck Plugin
+      - OBS Websocket
+
+    <Callout type="info">
+      The status bar provides real-time feedback about your actions and connection states.
+    </Callout>
+  </Tabs.Tab>
+</Tabs>
+
+{/* ### Team Management
+   - **Team Name**: Enter the team names for the match
+   - **Team Logo**: Upload team logos to display on the overlay - This can be local images, web images and also cloud images
+   - **Score**: Adjust the team scores as needed, This will be displayed on the overlay after using the update button
+
+### Match Tab Controls
+   - **Update**: Save changes made to the match settings
+   - **Swap**: Switch the team sides, this includes the team names, logos, scores & players
+   - **Reset**: Resets the current match settings to the default state
+
+### Game Config Selection
+   - **Game Config**: Select the game config needed for the match
+   - **Download Game Config**: Download additional game configs
+   - **Download Default Overlay**: Download the default overlay for the selected game config */}
