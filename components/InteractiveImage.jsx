@@ -15,22 +15,46 @@ const InteractiveDocImage = ({
 }) => {
   const [activeHotspot, setActiveHotspot] = useState(null);
 
+  // Define position mappings for number indicator
+  const getNumberPositionStyles = (position) => {
+    const size = '1.5rem'; // Matches your CSS width/height
+    const offset = '-0.75rem'; // Half the size for proper alignment
+
+    switch (position) {
+      case 'top-left':
+        return { top: offset, left: offset };
+      case 'top-right':
+        return { top: offset, right: offset };
+      case 'bottom-left':
+        return { bottom: offset, left: offset };
+      case 'bottom-right':
+        return { bottom: offset, right: offset };
+      case 'center':
+        return { 
+          top: '50%', 
+          left: '50%', 
+          transform: 'translate(-50%, -50%)' 
+        };
+      default:
+        return { top: offset, left: offset }; // Default to top-left
+    }
+  };
+
   return (
     <div className="interactive-doc-container">
       {title && <h2 className="interactive-doc-title">{title}</h2>}
       {description && <p className="interactive-doc-description">{description}</p>}
-      
+
       <div className="interactive-doc-image-container">
         <div className="interactive-doc-relative-wrapper">
-          {/* Base image */}
           <Image src={src} alt={alt} width={width} />
-          
-          {/* Hotspot overlay */}
+
           <div className="interactive-doc-overlay">
             {hotspots.map((hotspot, index) => {
-              // Use predefined tooltip position or default to 'bottom'
               const tooltipPosition = hotspot.tooltipPosition || 'bottom';
-              
+              const numberPosition = hotspot.numberPosition || 'top-left';
+              const numberStyles = getNumberPositionStyles(numberPosition);
+
               return (
                 <div
                   key={index}
@@ -42,7 +66,6 @@ const InteractiveDocImage = ({
                     height: `${hotspot.height}%`
                   }}
                 >
-                  {/* Highlight box */}
                   <div 
                     className={`interactive-doc-highlight-box ${activeHotspot === index ? 'active' : ''}`}
                     onClick={() => {
@@ -50,13 +73,14 @@ const InteractiveDocImage = ({
                       if (hotspot.onClick) hotspot.onClick();
                     }}
                   />
-                  
-                  {/* Number indicator */}
-                  <div className={`interactive-doc-number ${activeHotspot === index ? 'active' : ''}`}>
+
+                  <div 
+                    className={`interactive-doc-number ${activeHotspot === index ? 'active' : ''}`}
+                    style={numberStyles}
+                  >
                     {index + 1}
                   </div>
-                  
-                  {/* Tooltip with positioning */}
+
                   {activeHotspot === index && hotspot.tooltip && (
                     <div className={`interactive-doc-tooltip tooltip-${tooltipPosition}`}>
                       <p className="interactive-doc-tooltip-title">{hotspot.tooltip}</p>
@@ -83,7 +107,7 @@ const InteractiveDocImage = ({
           </div>
         </div>
       </div>
-      
+
       <div className="interactive-doc-footer">
         <p>Hover over or click on a numbered area to see more information.</p>
       </div>

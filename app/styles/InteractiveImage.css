@@ -33,28 +33,26 @@
     width: 100%;
     height: 100%;
   }
-  
-  .interactive-doc-hotspot {
-    position: absolute;
-    cursor: pointer;
-  }
-  
+
   .interactive-doc-highlight-box {
     position: absolute;
     inset: 0;
     border: 2px dashed rgb(255, 238, 0);
     border-radius: 0.375rem;
     transition: all 0.2s ease;
-    background-color: transparent;
+    /* background-color: transparent; */
+    background-color: rgba(255, 238, 0, 0.20);
   }
   
   .interactive-doc-highlight-box:hover {
-    background-color: rgba(189, 255, 8, 0.4);
+    background-color: rgba(78, 255, 8, 0.4);
   }
   
   .interactive-doc-highlight-box.active {
     border-color: rgb(0, 0, 0);
-    background-color: rgba(59, 130, 246, 0.2);
+    /* background-color: rgba(59, 130, 246, 0.2); */
+    background-color: rgba(78, 255, 8, 0.2);;
+    
   }
   
   /* Number indicator */
@@ -68,12 +66,17 @@
     border-radius: 50%;
     font-size: 0.875rem;
     font-weight: 500;
-    background-color:  rgb(229, 255, 0);
+    background-color: rgb(229, 255, 0);
     color: rgb(0, 0, 0);
-    top: -10px;
-    left: -10px;
     transition: all 0.2s ease;
     z-index: 5;
+  }
+  
+  /* Ensure the hotspot container can handle absolute positioning */
+  .interactive-doc-hotspot {
+    position: absolute;
+    cursor: pointer;
+    overflow: visible; /* Allow number to appear outside bounds if needed */
   }
   
   .interactive-doc-number.active {
