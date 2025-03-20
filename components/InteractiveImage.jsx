@@ -63,7 +63,7 @@ const InteractiveDocImage = ({
                       {hotspot.description && <p className="interactive-doc-tooltip-description">{hotspot.description}</p>}
                       {hotspot.href && (
                         <div className="interactive-doc-learn-more">
-                          <InfoIcon size={16} />
+                          <InfoIcon size={16} color='gray'/>
                           <span 
                             className="interactive-doc-learn-more-text"
                             onClick={(e) => {
