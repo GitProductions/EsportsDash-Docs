@@ -7,10 +7,28 @@ import { Cards } from 'nextra/components'
 import  InteractiveDocImage  from '@components/InteractiveImage'
 
 
+{/* # Show Info Tab
+
+- This is the 'default' layout for the show info tab.
+- Each item you see here is called an 'input' and each input has a type
+  - Text - This is for text input, such as names or titles, In our example below we have the Caster Names and Host Name inputs which are text
+  - File - Image Files only, this is for logos and images that you want to display on the overlay.
+  - Color - Create a custom color input that can be used to color various assets in your overlay, including setting custom background colors for OBS Sources
+  - List - A list of items that can be selected from a dropdown menu, For example Social Media Platforms for Caster Social Media as seen for `BGG_SM1_LOGO` in the image below
+- Each input can be modified by the user to change the information displayed on the overlay.
+- Each Input is movable by using the 'lock' icon on the bottom right of the input.
+- Each Input as a specific endpoint that can be accessed externally by using the 'info' icon at the top left of the input.
+ */}
+
+ # Show Info Tab
+
+This is where you'll manage all the information that appears on your broadcast overlay.
+
+
+
 <InteractiveDocImage 
   src="/images/user-interface/showinfo-tab/showinfo-tab.png"
   alt="Show Info Tab Interface"
-  title="Show Info Tab"
   description=""
   hotspots={[
     {
@@ -42,6 +60,42 @@ import  InteractiveDocImage  from '@components/InteractiveImage'
     }
   ]}
 />
+
+## Understanding Input Boxes
+
+Think of input boxes as forms you can fill out. Each box on this screen helps customize different parts of your broadcast. There are four main types:
+
+### Types of Inputs:
+
+1. **Text Inputs** 📝
+   - These are simple text boxes for entering names or titles
+   - Example: Type in caster names or the host's name
+
+2. **Image Inputs** 🖼️
+   - These inputs accept image files (like .png, .jpg, webp etc)
+   - Use these to add logos or pictures to your broadcast
+
+3. **Color Inputs** 🎨
+   - Click to open a color picker
+   - Perfect for customizing background colors or text colors
+
+4. **List Inputs** 📋
+   - These are dropdown menus with pre-set choices
+   - Example: Choosing social media platforms from a list
+
+### Features:
+
+- **Move Inputs Around** 🔄
+  - See the lock icon (🔒) at the bottom right of each box?
+  - Click it to unlock and drag the input wherever you want!
+
+- **Get Technical Info** ℹ️
+  - Look for the info icon (ℹ️) at the top left of each input
+  - Click it to see technical details (useful for developers)
+
+Everything you enter here will automatically update your broadcast overlay in real-time!
+
+
 
 
 
