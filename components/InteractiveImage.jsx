@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { Image } from 'nextra/components';
 import { InfoIcon } from 'lucide-react';
-// import './InteractiveDocImage.css';
 import '../app/styles/InteractiveImage.css';
 
 const InteractiveDocImage = ({ 
@@ -28,55 +27,59 @@ const InteractiveDocImage = ({
           
           {/* Hotspot overlay */}
           <div className="interactive-doc-overlay">
-            {hotspots.map((hotspot, index) => (
-              <div
-                key={index}
-                className="interactive-doc-hotspot"
-                style={{
-                  top: `${hotspot.top}%`,
-                  left: `${hotspot.left}%`,
-                  width: `${hotspot.width}%`,
-                  height: `${hotspot.height}%`
-                }}
-              >
-                {/* Highlight box */}
-                <div 
-                  className={`interactive-doc-highlight-box ${activeHotspot === index ? 'active' : ''}`}
-                  onClick={() => {
-                    setActiveHotspot(index === activeHotspot ? null : index);
-                    if (hotspot.onClick) hotspot.onClick();
-                    // if (hotspot.href) window.location.href = hotspot.href;
+            {hotspots.map((hotspot, index) => {
+              // Use predefined tooltip position or default to 'bottom'
+              const tooltipPosition = hotspot.tooltipPosition || 'bottom';
+              
+              return (
+                <div
+                  key={index}
+                  className="interactive-doc-hotspot"
+                  style={{
+                    top: `${hotspot.top}%`,
+                    left: `${hotspot.left}%`,
+                    width: `${hotspot.width}%`,
+                    height: `${hotspot.height}%`
                   }}
-                />
-                
-                {/* Number indicator */}
-                <div className={`interactive-doc-number ${activeHotspot === index ? 'active' : ''}`}>
-                  {index + 1}
-                </div>
-                
-                {/* Tooltip on hover/active */}
-                {activeHotspot === index && hotspot.tooltip && (
-                  <div className="interactive-doc-tooltip">
-                    <p className="interactive-doc-tooltip-title">{hotspot.tooltip}</p>
-                    {hotspot.description && <p className="interactive-doc-tooltip-description">{hotspot.description}</p>}
-                    {hotspot.href && (
-                      <div className="interactive-doc-learn-more">
-                        <InfoIcon size={16} />
-                        <span 
-                          className="interactive-doc-learn-more-text"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            window.location.href = hotspot.href;
-                          }}
-                        >
-                          Learn more
-                        </span>
-                      </div>
-                    )}
+                >
+                  {/* Highlight box */}
+                  <div 
+                    className={`interactive-doc-highlight-box ${activeHotspot === index ? 'active' : ''}`}
+                    onClick={() => {
+                      setActiveHotspot(index === activeHotspot ? null : index);
+                      if (hotspot.onClick) hotspot.onClick();
+                    }}
+                  />
+                  
+                  {/* Number indicator */}
+                  <div className={`interactive-doc-number ${activeHotspot === index ? 'active' : ''}`}>
+                    {index + 1}
                   </div>
-                )}
-              </div>
-            ))}
+                  
+                  {/* Tooltip with positioning */}
+                  {activeHotspot === index && hotspot.tooltip && (
+                    <div className={`interactive-doc-tooltip tooltip-${tooltipPosition}`}>
+                      <p className="interactive-doc-tooltip-title">{hotspot.tooltip}</p>
+                      {hotspot.description && <p className="interactive-doc-tooltip-description">{hotspot.description}</p>}
+                      {hotspot.href && (
+                        <div className="interactive-doc-learn-more">
+                          <InfoIcon size={16} />
+                          <span 
+                            className="interactive-doc-learn-more-text"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              window.location.href = hotspot.href;
+                            }}
+                          >
+                            Learn more
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
