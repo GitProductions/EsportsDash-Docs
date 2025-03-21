@@ -48,6 +48,7 @@
   
   .interactive-doc-highlight-box:hover {
     background-color: rgba(78, 255, 8, 0.4);
+    cursor:help;
   }
   
   .interactive-doc-highlight-box.active {
@@ -79,7 +80,6 @@
   /* Ensure the hotspot container can handle absolute positioning */
   .interactive-doc-hotspot {
     position: absolute;
-    cursor:help;
     overflow: visible; /* Allow number to appear outside bounds if needed */
   }
   
