@@ -52,7 +52,7 @@ const InteractiveDocImage = ({
           <div className="interactive-doc-overlay">
             {hotspots.map((hotspot, index) => {
               const tooltipPosition = hotspot.tooltipPosition || 'bottom';
-              const numberPosition = hotspot.numberPosition || 'top-left';
+              const numberPosition = hotspot.numberPosition || 'center';
               const numberStyles = getNumberPositionStyles(numberPosition);
 
               return (
