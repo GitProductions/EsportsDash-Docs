@@ -65,16 +65,20 @@ const InteractiveDocImage = ({
                     width: `${hotspot.width}%`,
                     height: `${hotspot.height}%`
                   }}
+                  onClick={() => {
+                    setActiveHotspot(index === activeHotspot ? null : index);
+                    if (hotspot.onClick) hotspot.onClick();
+                  }}
                 >
                   <div 
                     className={`interactive-doc-highlight-box ${activeHotspot === index ? 'active' : ''}`}
                     // onMouseEnter={() => setActiveHotspot(index)}
                     // onMouseLeave={() => setActiveHotspot(null)}
 
-                    onClick={() => {
-                      setActiveHotspot(index === activeHotspot ? null : index);
-                      if (hotspot.onClick) hotspot.onClick();
-                    }}
+                    // onClick={() => {
+                    //   setActiveHotspot(index === activeHotspot ? null : index);
+                    //   if (hotspot.onClick) hotspot.onClick();
+                    // }}
                   />
 
                   <div 
