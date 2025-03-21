@@ -2,8 +2,14 @@
 
 import { useState } from 'react';
 
+interface ApiResponse {
+  status: number;
+  statusText: string;
+  data: any;
+}
+
 export default function ApiTester({ endpoint, method = "GET", baseUrl = "http://localhost:8080" }) {
-  const [response, setResponse] = useState(null);
+  const [response, setResponse] = useState<ApiResponse | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [expanded, setExpanded] = useState(false);
