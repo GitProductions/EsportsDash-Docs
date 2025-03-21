@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Image } from 'nextra/components';
 import { InfoIcon } from 'lucide-react';
 import '../app/styles/InteractiveImage.css';
+import Link from 'next/link';
 
 const InteractiveDocImage = ({ 
   src, 
@@ -95,7 +96,7 @@ const InteractiveDocImage = ({
                       {hotspot.href && (
                         <div className="interactive-doc-learn-more">
                           <InfoIcon size={16} color='gray'/>
-                          <span 
+                          {/* <span 
                             className="interactive-doc-learn-more-text"
                             onClick={(e) => {
                               e.stopPropagation();
@@ -103,7 +104,10 @@ const InteractiveDocImage = ({
                             }}
                           >
                             Learn more
-                          </span>
+                          </span> */}
+                          <Link href={hotspot.href} className="interactive-doc-learn-more-text">
+                            Learn more
+                          </Link>
                         </div>
                       )}
                     </div>
