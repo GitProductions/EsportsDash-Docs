@@ -2,6 +2,12 @@ const path = require('path');
 const fetch = require('node-fetch');
 const fs = require('fs').promises;
 
+
+
+
+// This can be ran from the command line to check all links in the MDX files in a directory
+// This tests each one to see if its valid or not to help catch broken links in the documentation
+
 /**
  * Configuration constants
  */
