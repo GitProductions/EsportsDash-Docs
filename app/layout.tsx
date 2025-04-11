@@ -5,10 +5,10 @@ import 'nextra-theme-docs/style.css'
 import Link from "next/link";
 import { socialLinks } from './data/socialLinks'
 
-
+// Setting overall metadata for the website
 export const metadata = {
   title: 'Documentation | EsportsDash',
-  description: 'Documentation for Esports Dash Scoreboard Tool',
+  description: 'Guides and Documentation for EsportsDash - the professional scoreboard and streaming toolkit for esports broadcasters, tournament organizers, and content creators.',
   metadataBase: 'https://docs.esportsdash.com',
   openGraph: {
     images: [
