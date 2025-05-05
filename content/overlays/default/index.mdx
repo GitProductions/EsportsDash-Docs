@@ -120,11 +120,82 @@ import CustomCard from '../../../components/Card';
 
 ## In-Game Scene
 
-The In-Game scene is a pre-configured overlay that comes with every game configuration in Esports Dash. 
+The In-Game scene provides a scoreboard overlay that automatically adjusts to fit the current game configuration selected in your Esports Dash dashboard.
+
+<Image src="/images/overlays/default/in-game.webp" alt="In-Game Scoreboard Overlay" width="100%"/>
+
+### Customizing Your Overlay
+
+Each game configuration comes with a default appearance, but you have two options for customization:
+
+#### 1. Built-in Style Presets
+
+Currently, the **Valorant** game configuration offers 5 different pre-designed style options. Other game configs will be receiving alternative styles in future updates.
+
+To switch between these styles, add the `style` parameter to your scoreboard URL:
+
+<Image src="/images/overlays/default/styling/style-params.png" alt="Style Parameters Example" width="100%"/>
+
+**Example:**
+```bash
+https://esportsdash.com/overlay/scoreboard?style=2
+```
+##### Example Valorant Styles
+<Image src="/images/overlays/default/styling/default_sample_styles.webp" alt="Style Parameters Example" width="100%"/>
 
 
-<Image src="/images/overlays/default/in-game.webp" alt="In-Game" width="100%"/>
 
+#### 2. Custom CSS
+
+You can also customize the scoreboard's appearance using custom CSS properties. To apply your custom styling:
+
+1. In OBS Studio, right-click on your browser source
+2. Select "Properties"
+3. Scroll down to find the "Custom CSS" text area
+4. Add your CSS overrides here
+
+Your custom CSS should target the game-specific class (e.g., `.valorantPositions` for Valorant overlays) and override the CSS variables below:
+
+```css
+.valorantPositions {
+  /* Score and Team Appearance */
+  --scoreSize: 3em;                /* Size of the score numbers */
+  --teamLogoSize: 45px;            /* Size of team logos */
+  --teamNameSize: 1.3em;           /* Size of team names */
+  --teamNameInnerPadding: 10px;    /* Padding inside team name container */
+  
+  /* Team Name Alignment */
+  --teamLeftTextNameAlign: left;   /* Text alignment for left team name */
+  --teamRightTextNameAlign: right; /* Text alignment for right team name */
+  
+  /* Team Container Padding */
+  --teamLeftInnerPadding: 0px;     /* Inner padding for left team container */
+  --teamRightInnerPadding: 0px;    /* Inner padding for right team container */
+  --teamLeftOuterPadding: 0px;     /* Outer padding for left team container */
+  --teamRightOuterPadding: 0px;    /* Outer padding for right team container */
+  
+  /* Team Container Borders */      /* Colors do get replaced by dashboard, This is for position of border*/
+  --teamLeftBorderLeft: 0px solid #27AAE1;   /* Left border of left team */
+  --teamLeftBorderRight: 7px solid #C80013;  /* Right border of left team */
+  --teamRightBorderLeft: 7px solid #27AAE1;  /* Left border of right team */
+  --teamRightBorderRight: 0px solid #C80013; /* Right border of right team */
+  
+  /* Background Images and Gradients */
+  --teamLeftBackgroundImage: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%);
+  --teamRightBackgroundImage: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%);
+  
+  /* Middle Element Positioning */
+  --middleTopPosition: 8px;        /* Position from top */
+  --middleLeftPosition: 50%;       /* Horizontal position */
+  --middleWidth: 250px;            /* Width of middle element */
+  --middleHeight: 35px;            /* Height of middle element */
+  --middleTextSize: 1.5em;         /* Size of text in middle element */
+  
+  /* Skews */
+  --skew-angle-positive: 0deg;     /* Positive skew angle for various portions of scoreboard */
+  --skew-angle-negative: 0deg;     /* Negative skew angle for various portions of scoreboard  */
+}
+```
 
 
 
