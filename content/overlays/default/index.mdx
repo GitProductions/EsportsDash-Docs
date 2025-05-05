@@ -5,11 +5,12 @@ asIndexPage: true
 
 import { Cards, Image } from 'nextra/components'
 import CustomCard from '../../../components/Card';
+import ImageModal from '../../../components/ImageModal';
 
 
 ## Scene Collection Overview
 
-#### Select a scene to learn more about its features and how to use it in your broadcast.
+ **Select a scene to learn more about its features and how to use it in your broadcast.**
 
 <Cards num={3}>
 {/* each one of these cards could populate based off of the mdx's? that could be nice..  */}
@@ -122,7 +123,7 @@ import CustomCard from '../../../components/Card';
 
 The In-Game scene provides a scoreboard overlay that automatically adjusts to fit the current game configuration selected in your Esports Dash dashboard.
 
-<Image src="/images/overlays/default/in-game.webp" alt="In-Game Scoreboard Overlay" width="100%"/>
+<ImageModal src="/images/overlays/default/in-game.webp" alt="In-Game Scoreboard Overlay" />
 
 ### Customizing Your Overlay
 
@@ -130,20 +131,20 @@ Each game configuration comes with a default appearance, but you have two option
 
 #### 1. Built-in Style Presets
 
-Currently, the **Valorant** game configuration offers 5 different pre-designed style options. Other game configs will be receiving alternative styles in future updates.
+Currently, the **Valorant** game configuration offers 5 different pre-designed style options. Other [game configs](/install-game-configs) will be receiving alternative styles in future updates.
 
 To switch between these styles, add the `style` parameter to your scoreboard URL:
 
-<Image src="/images/overlays/default/styling/style-params.png" alt="Style Parameters Example" width="100%"/>
+<ImageModal src="/images/overlays/default/styling/style-params.png" alt="Style Parameters Example" />
 
 **Example:**
 ```bash
 https://esportsdash.com/overlay/scoreboard?style=2
 ```
 ##### Example Valorant Styles
-<Image src="/images/overlays/default/styling/default_sample_styles.webp" alt="Style Parameters Example" width="100%"/>
+{/* <ImageModal src="/images/overlays/default/styling/default_sample_styles.webp" alt="Style Parameters Example" width="100%"/> */}
 
-
+<ImageModal src="/images/overlays/default/styling/default_sample_styles.webp" alt="Style Parameters Example" />
 
 #### 2. Custom CSS
 
@@ -206,43 +207,44 @@ Your custom CSS should target the game-specific class (e.g., `.valorantPositions
  **Replay scene is used when user initiates a replay via esports dash or possibly an obs plugin**
 
 
-<Image src="/images/overlays/default/instantreplay.webp" alt="Replay"/>
+<ImageModal src="/images/overlays/default/instantreplay.webp" alt="Replay" />
 
 
 ## DuoCam Row
 
 **DuoCam Row** is a dual camera setup for player and commentator views. 
-<Image src="/images/overlays/default/duocam-row.webp" alt="DuoCam Row" />
+<ImageModal src="/images/overlays/default/duocam-row.webp" alt="DuoCam Row" />
 
 
 ## TrioCam Row
 
 **TrioCam Row** is a three-camera setup: two for shoutcasters, one for player or host. 
-<Image src="/images/overlays/default/triocam-row.webp" alt="TrioCam Row"/>
+<ImageModal  src="/images/overlays/default/triocam-row.webp"  alt="TrioCam Row" />
 
 ## Analyst Special
 **Analyst Special** is a two-camera setup for your shoutcasters. 
-<Image src="/images/overlays/default/analystspecial.webp" alt="Analyst Special"/>
+<ImageModal  src="/images/overlays/default/analystspecial.webp"  alt="Analyst Special" />
 
 
 ## Duo Single Cam
 **Duo Single Cam** is a full screen single camera setup for multiple commentators. 
-<Image src="/images/overlays/default/duo-singlecam.webp" alt="Duo Single Cam"/>
+<ImageModal src="/images/overlays/default/duo-singlecam.webp"alt="Duo Single Cam" />
 
 ## Map Pool
 **Map Pool** is a display of current maps & scores for the match.
-<Image src="/images/overlays/default/map-pool.webp" alt="Map Pool" />
+<ImageModal src="/images/overlays/default/map-pool.webp" alt="Map Pool" />
+
 
 ## Team
 **Team** displays each member of the team and their selected roles & characters. 
-<Image src="/images/overlays/default/teams.webp" alt="Team Scene" />
+<ImageModal src="/images/overlays/default/teams.webp" alt="Team Scene" />
 
 ## Bracket
 **Bracket** is a Single Elimination & Double Elimination Bracket overview.
-<Image src="/images/overlays/default/bracket.webp" alt="Bracket" />
+<ImageModal src="/images/overlays/default/bracket.webp" alt="Bracket" />
 
 ## Away Screen
 **Away Screen** is an intermission screen which showcases matches upcoming. 
-<Image src="/images/overlays/default/away.webp" alt="Away Screen" />
+<ImageModal src="/images/overlays/default/away.webp" alt="Away Screen" />
 
 
