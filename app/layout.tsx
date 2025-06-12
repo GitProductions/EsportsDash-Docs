@@ -1,9 +1,15 @@
-import {Footer, Layout, Navbar} from 'nextra-theme-docs'
-import {Banner, Head} from 'nextra/components'
-import {getPageMap} from 'nextra/page-map'
+import { Footer, Layout, Navbar } from 'nextra-theme-docs'
+import { Banner, Head } from 'nextra/components'
+import { getPageMap } from 'nextra/page-map'
 import 'nextra-theme-docs/style.css'
 import Link from "next/link";
 import { socialLinks } from './data/socialLinks'
+
+import { GoogleAnalytics } from '@next/third-parties/google'
+
+
+
+
 
 // Setting overall metadata for the website
 export const metadata = {
@@ -41,7 +47,7 @@ const navbar = (
     // projectIcon={socialLinks.github.icon}
     logo={
       <>
-        <img src="/images/general/icon_128.png" alt="Logo" width={40} height={40}/>
+        <img src="/images/general/icon_128.png" alt="Logo" width={40} height={40} />
         <span style={{ marginLeft: '.4em', fontWeight: 800 }}>
           Esports Dash Docs
         </span>
@@ -49,14 +55,14 @@ const navbar = (
     }
     logoLink="/"
   >
-    <Link 
+    <Link
       href={socialLinks.twitter.href}
       target="_blank"
       rel="noopener noreferrer"
     >
       {socialLinks.twitter.icon}
     </Link>
-    <Link 
+    <Link
       href={socialLinks.youtube.href}
       target="_blank"
       rel="noopener noreferrer"
@@ -68,9 +74,9 @@ const navbar = (
 
 const footer = (
   <Footer>
-    <div style={{ 
-      display: 'flex', 
-      flexDirection: 'column', 
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
       alignItems: 'center',
       gap: '1rem',
       width: '100%',
@@ -100,7 +106,7 @@ const footer = (
       </div>
 
       {/* Divider */}
-      <hr style={{ 
+      <hr style={{
         width: '100%',
         border: 'none',
         borderTop: '1px solid gray',
@@ -121,62 +127,63 @@ const footer = (
   </Footer>
 )
 
-export default async function RootLayout({children}) {
-    return (
-        <html
-            // Not required, but good for SEO
-            lang="en"
-            // Required to be set
-            dir="ltr"
-            // Suggested by `next-themes` package https://github.com/pacocoursey/next-themes#with-app
-            suppressHydrationWarning
-            
-            
+export default async function RootLayout({ children }) {
+  return (
+    <html
+      // Not required, but good for SEO
+      lang="en"
+      // Required to be set
+      dir="ltr"
+      // Suggested by `next-themes` package https://github.com/pacocoursey/next-themes#with-app
+      suppressHydrationWarning
+    >
+
+      <GoogleAnalytics gaId="G-DL6W26GHMH" />
+
+      <Head
+        color={{
+          hue: 220,
+          saturation: {
+            light: 100,
+            dark: 80  // Lower saturation for dark mode to avoid brown tint
+          },
+          lightness: {
+            light: 40,
+            dark: 60  // Lower lightness value for dark mode
+          }
+        }}
+
+      >
+
+
+
+        <link rel="shortcut icon" href="/images/general/icon.svg" />
+        {/* Your additional tags should be passed as `children` of `<Head>` element */}
+      </Head>
+
+      <body>
+        <Layout
+          banner={banner}
+          navbar={navbar}
+          pageMap={await getPageMap()}
+          docsRepositoryBase="https://github.com/GitProductions/EsportsDash-Docs/tree/main"
+          footer={footer}
+
+          nextThemes={{
+            defaultTheme: 'dark'
+          }}
+
+          sidebar={{
+            defaultMenuCollapseLevel: 1, // Change this number to control the default collapse level
+            autoCollapse: true, // If true, automatically collapse inactive folders above defaultMenuCollapseLevel
+            toggleButton: true // Hide/show sidebar toggle button. Defaults to `false`
+          }}
+
+          feedback={{}}
         >
-        <Head
-            color={{
-              hue: 220,
-              saturation: {
-                light: 100,
-                dark: 80  // Lower saturation for dark mode to avoid brown tint
-              },
-              lightness: {
-                light: 40,
-                dark: 60  // Lower lightness value for dark mode
-              }
-            }}
-            
-        >
-    
-
-
-            <link rel="shortcut icon" href="/images/general/icon.svg"/>
-            {/* Your additional tags should be passed as `children` of `<Head>` element */}
-        </Head>
-
-        <body>
-          <Layout
-              banner={banner}
-              navbar={navbar}
-              pageMap={await getPageMap()}
-              docsRepositoryBase="https://github.com/GitProductions/EsportsDash-Docs/tree/main"
-              footer={footer}
-              
-              nextThemes={{
-                defaultTheme: 'dark'
-            }}
-
-            sidebar={{
-              defaultMenuCollapseLevel: 1, // Change this number to control the default collapse level
-              autoCollapse: true, // If true, automatically collapse inactive folders above defaultMenuCollapseLevel
-              toggleButton: true // Hide/show sidebar toggle button. Defaults to `false`
-            }}
-
-            feedback={{}}
-          >
-              {children}
-          </Layout>
-        </body>
-        </html>
-    )
+          {children}
+        </Layout>
+      </body>
+    </html>
+  )
 }
