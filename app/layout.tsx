@@ -138,7 +138,6 @@ export default async function RootLayout({ children }) {
       suppressHydrationWarning
     >
 
-      <GoogleAnalytics gaId="G-DL6W26GHMH" />
 
       <Head
         color={{
@@ -162,6 +161,7 @@ export default async function RootLayout({ children }) {
       </Head>
 
       <body>
+        
         <Layout
           banner={banner}
           navbar={navbar}
@@ -182,6 +182,9 @@ export default async function RootLayout({ children }) {
           feedback={{}}
         >
           {children}
+
+        <GoogleAnalytics gaId="G-DL6W26GHMH" />
+
         </Layout>
       </body>
     </html>
