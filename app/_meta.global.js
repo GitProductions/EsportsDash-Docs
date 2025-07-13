@@ -99,6 +99,10 @@ export default {
     title: 'Game Configs',
   },
 
+  'vmix-integration': {
+    title: 'vMix Integration',
+  },
+
 
 
 
