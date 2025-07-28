@@ -15,7 +15,7 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 export const metadata = {
   title: 'Documentation | EsportsDash',
   description: 'Guides and Documentation for EsportsDash - the professional scoreboard and streaming toolkit for esports broadcasters, tournament organizers, and content creators.',
-  metadataBase: 'https://docs.esportsdash.com',
+  metadataBase: new URL('https://docs.esportsdash.com'),
   openGraph: {
     images: [
       {

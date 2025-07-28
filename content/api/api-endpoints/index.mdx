@@ -1,5 +1,5 @@
 import {Cards} from 'nextra/components'
-import { Monitor, Users, Settings } from 'lucide-react'
+import { Monitor, Users, Settings, Database } from 'lucide-react'
 
 
 
@@ -27,6 +27,12 @@ The API is divided into three main categories:
     href="#app-actions"
     description="Configure application settings."
   />
+  <Cards.Card
+    icon={<Database />}
+    title="Live Data"
+    href="#live-data"
+    description="Fetch live data for the dashboard overlay."
+  />
 </Cards>
 ---
 
@@ -43,9 +49,9 @@ The `api/window/` endpoints manage the application's window states and utilities
 | `/api/window/toggleOrientation`| GET    | Switches the main window’s orientation (e.g., horizontal/vertical). |
 | `/api/window/hotkeyManager`    | GET    | Opens the hotkey manager window. |
 | `/api/window/checkForUpdates`  | GET    | Checks for available application updates. |
-| `/api/window/about`            | GET    | Opens the "About" window with app details. |
-| `/api/window/getAppVersion`    | GET    | Returns the current application version as a string. |
-| `/api/window/getHotkeys`       | GET    | Retrieves a list of all configured hotkeys. |
+| `/api/window/getAppVersion`    | GET    | Returns the current application version |
+{/* | `/api/window/about`            | GET    | Opens the "About" window with app details. | */}
+{/* | `/api/window/getHotkeys`       | GET    | Retrieves a list of all configured hotkeys. | */}
 
 ### Example
 To toggle the window:
@@ -64,7 +70,6 @@ The `api/team/` endpoints manage team-related data, such as scores, names, and a
 |----------------------|--------|---------------------------|--------------------------------------|
 | `/api/team/swapTeams`        | GET    | None                      | Swaps the positions of the two teams. |
 | `/api/team/resetTeams`       | GET    | None                      | Resets all team data to default values. |
-| `/api/team/updateMatchData`  | GET    | None                      | Refreshes the current match data. |
 | `/api/team/increment`        | GET    | `team` (required)         | Increments the score of the specified team by 1. |
 | `/api/team/decrement`        | GET    | `team` (required)         | Decrements the score of the specified team by 1. |
 | `/api/team/setScore`         | GET    | `team` (required), `score` (required) | Sets the score for the specified team. |
@@ -72,6 +77,8 @@ The `api/team/` endpoints manage team-related data, such as scores, names, and a
 | `/api/team/setTeamInfo`      | GET    | `team` (required), `info` (required)  | Sets additional info (e.g., description) for the team. |
 | `/api/team/setTeamColor`     | GET    | `team` (required), `color` (required) | Sets the team’s color using a hex code (e.g., `FF5733`). |
 | `/api/team/setTeamLogo`      | GET    | `team` (required), `logo` (required)  | Sets the team’s logo (local path or URL). |
+| `/api/team/updateMatchData`  | GET    | None                      | Saves the current match data. |
+
 
 ### Parameters
 - **`team`**: Must be `1` or `2` to specify the target team.
@@ -94,24 +101,57 @@ The `api/app/` endpoints handle application-level configurations.
 
 | Endpoint             | Method | Query Parameters   | Description                          |
 |----------------------|--------|--------------------|--------------------------------------|
-| `/api/app/selectgameconfig` | GET    | `id` (required)    | Selects a game configuration by its ID. |
-| `/api/app/selectgameconfig` | GET    | None               | Returns the current game configuration (if no `id` is provided). |
+| `/api/app/selectgameconfig` | GET    | `game` (required), `version` (required) | Selects a game configuration by its ID. |
+| `/api/app/getgameconfigs` | GET    | None               | Returns the current game configurations available (if no `id` is provided). |
 
 ### Parameters
-- **`id`**: A unique identifier for the game config (e.g., `config-123`).
+- **`game`**: A unique identifier for the game config (e.g., `Overwatch`).
+- **`version`**: The version of the game config (e.g., `1.0`).
 
 ### Example
 To select a game config:
 ```
-GET http://localhost:8080/api/app/selectgameconfig?id=config-123
+GET http://localhost:8080/api/app/selectgameconfig?game=Overwatch&version=1.0
 ```
 **Response**: `200 OK` on success.
 
 ---
 
+## Live Data
+
+The `api/` endpoints provide access to live data for the dashboard overlay.
+
+| Endpoint             | Method | Query Parameters          | Description                          |
+|----------------------|--------|---------------------------|--------------------------------------|
+| `/api/getfulljson`   | GET    | None                      | Returns a JSON object containing all data needed to run the overlay. |
+| `/api/getValue`      | GET    | `value` (required)        | Retrieves a specific value from the dashboard data using dot notation. |
+
+### Parameters
+- **`value`**: A string in dot notation to specify the data to fetch (e.g., `teams.team1.players.0`).
+
+### Examples
+To fetch the full JSON data for the overlay:
+GET http://localhost:8080/api/getfulljson
+
+**Response**: `200 OK` with a JSON object containing all data.
+<JsonViewer 
+data={
+  {"configVersion":"1.0","configAuthor":"EsportsDash","configID":"esportsdash.valorant","currentGame":"Valorant","totalPlayers":3,"teams":{"team1":{"id":"t_8ebd87ab-bfb7-4302-88bf-3d04160eb35f","teamName":"Ninjacats","teamLogo":"","teamLogoUrl":"","teamScore":0,"teamColor":"#ffffff","teamGroup":"A","players":[{"player":"","playerName":"","hero":"Cloak_%26_Dagger_Hero_Portrait","role":"Sentinel","info":"","hidden":false,"images":{"heroImage":"http://localhost:8080/files/gameConfigs/Marvel Rivals/esportsdash.marvelrivals/images/heroes/Cloak_%26_Dagger_Hero_Portrait.png","roleImage":"http://localhost:8080/files/gameConfigs/Valorant/esportsdash.valorant/images/roles/Sentinel.png","playerImage":"http://localhost:8080/files/playerImages/IMGP5209-scaled.jpg"},"playerImage":"http://localhost:8080/files/playerImages/IMGP5209-scaled.jpg"},{"player":"","playerName":"","hero":"Emma_Frost_Hero_Portrait","role":"Vanguard","info":"","hidden":false,"images":{"heroImage":"http://localhost:8080/files/gameConfigs/Marvel Rivals/esportsdash.marvelrivals/images/heroes/Emma_Frost_Hero_Portrait.png","roleImage":"http://localhost:8080/files/gameConfigs/Marvel Rivals/esportsdash.marvelrivals/images/roles/Vanguard_Icon.png","playerImage":"http://localhost:8080/files/defaults/default_player.png"}},{"player":"","playerName":"","hero":"Jeff_the_Land_Shark_Hero_Portrait","role":"Strategist","info":"","hidden":false,"images":{"heroImage":"http://localhost:8080/files/gameConfigs/Marvel Rivals/esportsdash.marvelrivals/images/heroes/Jeff_the_Land_Shark_Hero_Portrait.png","roleImage":"http://localhost:8080/files/gameConfigs/Marvel Rivals/esportsdash.marvelrivals/images/roles/Strategist_Icon.png","playerImage":"http://localhost:8080/files/defaults/default_player.png"}},{"player":"","playerName":"","hero":"","role":"","info":"","hidden":true,"images":{"heroImage":"http://localhost:8080/files/defaults/default_player.png","roleImage":"","playerImage":"http://localhost:8080/files/defaults/default_player.png"}},{"player":"","playerName":"","hero":"","role":"","info":"","hidden":true,"images":{"heroImage":"http://localhost:8080/files/defaults/default_player.png","roleImage":"","playerImage":"http://localhost:8080/files/defaults/default_player.png"}},{"player":"","playerName":"","hero":"","role":"","info":"","hidden":true,"images":{"heroImage":"http://localhost:8080/files/defaults/default_player.png","roleImage":"","playerImage":"http://localhost:8080/files/defaults/default_player.png"}}],"selectedRosterId":"main"},"team2":{"teamName":"Team 2","teamInfo":"","teamLogo":"","teamLogoUrl":"http://localhost:8080/files/teamLogos/default_team.png","teamScore":0,"teamColor":"#131131","teamGroup":"","players":[{"player":"","playerName":"","hero":"Jeff_the_Land_Shark_Hero_Portrait","role":"Strategist","info":"","hidden":false,"images":{"heroImage":"http://localhost:8080/files/gameConfigs/Marvel Rivals/esportsdash.marvelrivals/images/heroes/Jeff_the_Land_Shark_Hero_Portrait.png","roleImage":"http://localhost:8080/files/gameConfigs/Marvel Rivals/esportsdash.marvelrivals/images/roles/Strategist_Icon.png","playerImage":"http://localhost:8080/files/defaults/default_player.png"}},{"player":"","playerName":"","hero":"Emma_Frost_Hero_Portrait","role":"Vanguard","info":"","hidden":false,"images":{"heroImage":"http://localhost:8080/files/gameConfigs/Marvel Rivals/esportsdash.marvelrivals/images/heroes/Emma_Frost_Hero_Portrait.png","roleImage":"http://localhost:8080/files/gameConfigs/Marvel Rivals/esportsdash.marvelrivals/images/roles/Vanguard_Icon.png","playerImage":"http://localhost:8080/files/defaults/default_player.png"}},{"player":"","playerName":"","hero":"Doctor_Strange_Hero_Portrait","role":"Vanguard","info":"","hidden":false,"images":{"heroImage":"http://localhost:8080/files/gameConfigs/Marvel Rivals/esportsdash.marvelrivals/images/heroes/Doctor_Strange_Hero_Portrait.png","roleImage":"http://localhost:8080/files/gameConfigs/Marvel Rivals/esportsdash.marvelrivals/images/roles/Vanguard_Icon.png","playerImage":"http://localhost:8080/files/defaults/default_player.png"}},{"player":"","playerName":"","hero":"","role":"","info":"","hidden":true,"images":{"heroImage":"http://localhost:8080/files/defaults/default_player.png","roleImage":"","playerImage":"http://localhost:8080/files/defaults/default_player.png"}},{"player":"","playerName":"","hero":"","role":"","info":"","hidden":true,"images":{"heroImage":"http://localhost:8080/files/defaults/default_player.png","roleImage":"","playerImage":"http://localhost:8080/files/defaults/default_player.png"}},{"player":"","playerName":"","hero":"","role":"","info":"","hidden":true,"images":{"heroImage":"http://localhost:8080/files/defaults/default_player.png","roleImage":"","playerImage":"http://localhost:8080/files/defaults/default_player.png"}}]}},"matchFormat":"","maps":{"totalMaps":"3","selectedMap":{"map":"TBA","mapImage":"http://localhost:8080/files/gameConfigs/Valorant/esportsdash.valorant/images/maps/TBA.png","mode":"Convoy","modeImage":"http://localhost:8080/files/gameConfigs/Marvel Rivals/esportsdash.marvelrivals/images/maps/mapModes/Convoy.png","team1Score":0,"team2Score":0},"mapData":[{"selectedMode":"Standard","map":"","team1Score":6,"team2Score":5,"completed":true,"hidden":false,"modeImage":"http://localhost:8080/files/gameConfigs/Valorant/esportsdash.valorant/images/maps/mapModes/valorant.png","selectedMap":"Abyss","mapImage":"http://localhost:8080/files/gameConfigs/Valorant/esportsdash.valorant/images/maps/Abyss.png","winner":{"teamNumber":"1","teamName":"Team 1","teamScore":6,"teamLogoUrl":"http://localhost:8080/files/teamLogos/default_team.png"}},{"selectedMode":"Convoy","map":"","team1Score":0,"team2Score":0,"completed":false,"hidden":false,"modeImage":"http://localhost:8080/files/gameConfigs/Marvel Rivals/esportsdash.marvelrivals/images/maps/mapModes/Convoy.png","selectedMap":"TBA","mapImage":"http://localhost:8080/files/gameConfigs/Valorant/esportsdash.valorant/images/maps/TBA.png"},{"selectedMode":"TBA","map":"","team1Score":0,"team2Score":0,"completed":false,"hidden":false,"modeImage":"http://localhost:8080/files/defaults/default_map.png"},{"selectedMode":"TBA","map":"","team1Score":0,"team2Score":0,"completed":false,"hidden":true,"modeImage":"http://localhost:8080/files/defaults/default_map.png"},{"selectedMode":"TBA","map":"","team1Score":0,"team2Score":0,"completed":false,"hidden":true,"modeImage":"http://localhost:8080/files/defaults/default_map.png"},{"selectedMode":"TBA","map":"","team1Score":0,"team2Score":0,"completed":false,"hidden":true,"modeImage":"http://localhost:8080/files/defaults/default_map.png"},{"selectedMode":"TBA","map":"","team1Score":0,"team2Score":0,"completed":false,"hidden":true,"modeImage":"http://localhost:8080/files/defaults/default_map.png"}]},"totalMaps":"3","general":{"color":{"BGG_C1":{"value":"#ffffffff","label":"BGG_C1"},"BGG_C2":{"value":"#0f0f49ff","label":"BGG_C2"},"BGG_C3":{"value":"#0c84f3ff","label":"BGG_C3"},"BGG_C4":{"value":"#cacacaff","label":"BGG_C4"},"BGG_C5":{"value":"#ffffffff","label":"BGG_C5"},"BGG_C6":{"value":"#ffffffff","label":"BGG_C6"}},"file":{"BGG_L1":{"value":"http://localhost:8080/files/teamLogos/default_team.png","label":"BGG_L1","url":"http://localhost:8080/files/teamLogos/default_team.png"},"BGG_L2":{"value":"http://localhost:8080/files/teamLogos/default_team.png","label":"BGG_L2","url":"http://localhost:8080/files/teamLogos/default_team.png"}},"text":{"BGG_TAGLINE":{"value":"Powered by EsportsDash","label":"BGG_TAGLINE"},"BGG_SM1":{"value":"","label":"BGG_SM1"},"BGG_SM2":{"value":"","label":"BGG_SM2"},"Caster1":{"value":"Saga","label":"Caster1"},"Caster2":{"value":"fALECX","label":"Caster2"},"Host":{"value":"Host2","label":"Host"},"Message":{"value":"Corporate Esports Associaton","label":"Message"},"Caster1_Social":{"value":"@Saga_UK","label":"Caster1_Social"},"Caster2_Social":{"value":"@falecx","label":"Caster2_Social"},"Host_Social":{"value":"@Host1","label":"Host_Social "},"Host2":{"value":"Host 2","label":"Host2"},"Host2_Social":{"value":"@Host2 Socials","label":"Host2_Social "}},"list":{"BGG_SM1_LOGO":{"value":"none","label":"BGG_SM1_LOGO"},"BGG_SM2_LOGO":{"value":"none","label":"BGG_SM2_LOGO"},"Caster1_Platform":{"value":"twitch","label":"Caster1_Platform"},"Caster2_Platform":{"value":"bluesky","label":"Caster2_Platform"},"Host_Platform":{"value":"bluesky","label":"Host_Platform "},"Host2_Platform":{"value":"twitch","label":"Host2_Platform "}}},"appVersion":"0.7.10"}
+} 
+/>
+
+To get a specific value, such as the name of Team 1:
+```
+GET http://localhost:8080/api/getValue?value=teams.team1.teamName
+
+**Response**: `200 OK` with the value `"Ninjacats"`.
+```
+
+---
+
 ## General Notes
 
-- **Base URL**: All endpoints are accessed via `http://localhost:8080/api`.
+- **Base URL**: Most all endpoints are accessed via `http://localhost:8080/api` unless otherwise mentioned.
 - **Success Response**: Returns `200 OK` unless otherwise specified.
 - **Error Handling**: Missing or invalid query parameters result in a `400 Bad Request`.
 - **Hotkeys**: Retrieved via `/api/window/getHotkeys` as a JSON object.

@@ -2,11 +2,12 @@ import { useMDXComponents as getThemeComponents } from 'nextra-theme-docs' // ne
 
 import YouTube from './components/YouTubeEmbed' 
 // import ApiTester from './components/ApiTester' 
+import JsonViewer from './components/JsonViewer'
 
 
-// Add your custom components here
 const customComponents = {
   YouTube,
+  JsonViewer
   // ApiTester
 }
 
