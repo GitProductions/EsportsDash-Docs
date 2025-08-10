@@ -121,10 +121,12 @@ GET http://localhost:8080/api/app/selectgameconfig?game=Overwatch&version=1.0
 
 The `api/` endpoints provide access to live data for the dashboard overlay.
 
-| Endpoint             | Method | Query Parameters          | Description                          |
-|----------------------|--------|---------------------------|--------------------------------------|
-| `/api/getfulljson`   | GET    | None                      | Returns a JSON object containing all data needed to run the overlay. |
-| `/api/getValue`      | GET    | `value` (required)        | Retrieves a specific value from the dashboard data using dot notation. |
+| Endpoint                    | Method | Query Parameters     | Description                          |
+|-----------------------------|--------|----------------------|--------------------------------------|
+| `/api/getfulljson`          | GET    | None                 | Returns a JSON object containing all data needed to run the overlay. |
+| `/api/getValue`             | GET    | `value` (required)   | Retrieves a specific value from the dashboard data using dot notation. |
+| `/api/bracket`              | GET    | None                 | Returns the current bracket data in JSON format. |
+| `/api/tournament-teams`     | GET    | None                 | Returns the list of teams in the current tournament. |
 
 ### Parameters
 - **`value`**: A string in dot notation to specify the data to fetch (e.g., `teams.team1.players.0`).
@@ -156,3 +158,5 @@ GET http://localhost:8080/api/getValue?value=teams.team1.teamName
 - **Error Handling**: Missing or invalid query parameters result in a `400 Bad Request`.
 - **Hotkeys**: Retrieved via `/api/window/getHotkeys` as a JSON object.
 - **Team Values**: The `team` parameter must be `1` or `2`.
+
+
