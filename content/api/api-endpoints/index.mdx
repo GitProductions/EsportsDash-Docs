@@ -160,3 +160,11 @@ GET http://localhost:8080/api/getValue?value=teams.team1.teamName
 - **Team Values**: The `team` parameter must be `1` or `2`.
 
 
+<APIPlayground
+  endpoint="/getfulljson"
+  method="GET"
+  parameters={[
+    { name: 'team', description: 'Team ID (1 or 2)', required: true },
+    { name: 'score', description: 'Score value (integer)', required: true },
+  ]}
+/>
