@@ -13,7 +13,11 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 
 // Setting overall metadata for the website
 export const metadata = {
-  title: 'Documentation | EsportsDash',
+  // title: 'Documentation | EsportsDash',
+  title: {
+    template: '%s - Documentation | EsportsDash',
+    default: 'Documentation - EsportsDash',
+  },
   description: 'Guides and Documentation for EsportsDash - the professional scoreboard and streaming toolkit for esports broadcasters, tournament organizers, and content creators.',
   metadataBase: new URL('https://docs.esportsdash.com'),
   openGraph: {
@@ -161,7 +165,7 @@ export default async function RootLayout({ children }) {
       </Head>
 
       <body>
-        
+
         <Layout
           banner={banner}
           navbar={navbar}
@@ -183,7 +187,7 @@ export default async function RootLayout({ children }) {
         >
           {children}
 
-        <GoogleAnalytics gaId="G-DL6W26GHMH" />
+          <GoogleAnalytics gaId="G-DL6W26GHMH" />
 
         </Layout>
       </body>
