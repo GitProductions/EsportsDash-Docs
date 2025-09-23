@@ -18,6 +18,18 @@ export const metadata = {
     template: '%s - Documentation | EsportsDash',
     default: 'Documentation - EsportsDash',
   },
+  keywords: [
+    'OBS integration',
+    'esports overlay',
+    'custom overlay',
+    'esports scoreboard',
+    'score tracking',
+    'broadcast overlay',
+    'esports production tool',
+    'tournament management',
+    'live streaming esports',
+    'real-time scorekeeping',
+  ],
   description: 'Guides and Documentation for EsportsDash - the professional scoreboard and streaming toolkit for esports broadcasters, tournament organizers, and content creators.',
   metadataBase: new URL('https://docs.esportsdash.com'),
   openGraph: {
