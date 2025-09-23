@@ -45,8 +45,8 @@ The `api/window/` endpoints manage the application's window states and utilities
 | `/api/window/toggleWindow`     | GET    | Toggles the main window between open and closed states. |
 | `/api/window/minimizeWindow`   | GET    | Minimizes the main window to the taskbar. |
 | `/api/window/closeWindow`      | GET    | Hides the main window without exiting the app. |
-| `/api/window/openWindow`       | GET    | Opens the main window if it’s hidden or closed. |
-| `/api/window/toggleOrientation`| GET    | Switches the main window’s orientation (e.g., horizontal/vertical). |
+| `/api/window/openWindow`       | GET    | Opens the main window if it's hidden or closed. |
+| `/api/window/toggleOrientation`| GET    | Switches the main window's orientation (e.g., horizontal/vertical). |
 | `/api/window/hotkeyManager`    | GET    | Opens the hotkey manager window. |
 | `/api/window/checkForUpdates`  | GET    | Checks for available application updates. |
 | `/api/window/getAppVersion`    | GET    | Returns the current application version |
@@ -75,8 +75,8 @@ The `api/team/` endpoints manage team-related data, such as scores, names, and a
 | `/api/team/setScore`         | GET    | `team` (required), `score` (required) | Sets the score for the specified team. |
 | `/api/team/setTeamName`      | GET    | `team` (required), `name` (required)  | Updates the name of the specified team. |
 | `/api/team/setTeamInfo`      | GET    | `team` (required), `info` (required)  | Sets additional info (e.g., description) for the team. |
-| `/api/team/setTeamColor`     | GET    | `team` (required), `color` (required) | Sets the team’s color using a hex code (e.g., `FF5733`). |
-| `/api/team/setTeamLogo`      | GET    | `team` (required), `logo` (required)  | Sets the team’s logo (local path or URL). |
+| `/api/team/setTeamColor`     | GET    | `team` (required), `color` (required) | Sets the team's color using a hex code (e.g., `FF5733`). |
+| `/api/team/setTeamLogo`      | GET    | `team` (required), `logo` (required)  | Sets the team's logo (local path or URL). |
 | `/api/team/updateMatchData`  | GET    | None                      | Saves the current match data. |
 
 
@@ -87,7 +87,7 @@ The `api/team/` endpoints manage team-related data, such as scores, names, and a
 - **`logo`**: A file path (e.g., `C:/logos/team1.png`) or URL (e.g., `https://example.com/logo.png`).
 
 ### Example
-To set Team 1’s score to 5:
+To set Team 1's score to 5:
 ```
 GET http://localhost:8080/api/team/setScore?team=1&score=5
 ```
