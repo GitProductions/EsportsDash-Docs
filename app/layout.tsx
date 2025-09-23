@@ -18,6 +18,9 @@ export const metadata = {
     template: '%s - Documentation | EsportsDash',
     default: 'Documentation - EsportsDash',
   },
+  alternates: {
+    canonical: 'https://docs.esportsdash.com',
+  },
   keywords: [
     'OBS integration',
     'esports overlay',
