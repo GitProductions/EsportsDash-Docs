@@ -175,7 +175,7 @@ export default async function RootLayout({ children }) {
 
 
 
-        <link rel="shortcut icon" href="/images/general/icon.svg" />
+        <link rel="shortcut icon" href="/images/general/icon_128.png" />
         {/* Your additional tags should be passed as `children` of `<Head>` element */}
       </Head>
 
