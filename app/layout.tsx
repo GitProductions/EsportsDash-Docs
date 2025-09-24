@@ -63,9 +63,9 @@ const CTAButton = () => {
       >
         <div style={{
           padding: '0.5rem 1rem',
-          backgroundColor: '#0066ffff', 
+          backgroundColor: '#0066ffff',
           color: 'white',
-          borderRadius: '0.375rem', 
+          borderRadius: '0.375rem',
           fontWeight: '600',
           display: 'flex',
           alignItems: 'center',
@@ -179,6 +179,112 @@ const footer = (
 )
 
 export default async function RootLayout({ children }) {
+  // jsonLD 
+
+  const jsonLd = {
+
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Esports Dash Documentation",
+        "url": "https://docs.esportsdash.com",
+        "description": "Official documentation for Esports Dash, a free esports scoreboard tool. Guides for setup, overlays, game configurations, and OBS/vMix integration.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Git Productions",
+          "url": "https://esportsdash.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://esportsdash.com/images/general/icon_128.png",
+            "width": 128,
+            "height": 128
+          },
+          "sameAs": ["https://twitter.com/esportsdash_", "https://esportsdash.com/discord", "https://www.youtube.com/@esportsdash_"],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "email": "support@esportsdash.com",
+            "url": "https://esportsdash.com/discord"
+          }
+        },
+        // "potentialAction": {
+        //   "@type": "SearchAction",
+        //   "target": "https://docs.esportsdash.com/search?q={search_term_string}",
+        //   "query-input": "required name=search_term_string"
+        // }
+      },
+      {
+        "@type": "WebPage",
+        "name": "Esports Dash Documentation - Getting Started",
+        "url": "https://docs.esportsdash.com",
+        "description": "Get started with Esports Dash: learn setup, overlays, game configs, and integrations for professional esports broadcasts.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "url": "https://docs.esportsdash.com"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://docs.esportsdash.com/images/introduction/intro-download-overlay.png",
+          "width": 1200,
+          "height": 630
+        },
+        "relatedLink": [
+          "https://docs.esportsdash.com/install-game-configs",
+          "https://docs.esportsdash.com/overlays",
+          "https://docs.esportsdash.com/support",
+          "https://marketplace.elgato.com/@esportsdash?extension=plugins"
+        ]
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Esports Dash Documentation",
+        "url": "https://docs.esportsdash.com",
+        "about": {
+          "@type": "SoftwareApplication",
+          "name": "Esports Dash",
+          "url": "https://esportsdash.com",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "Windows 10/11",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "featureList": [
+            "Scoreboard Controls",
+            "OBS Integration",
+            "vMix Integration",
+            "Customizable Overlays",
+            "Game Configurations",
+            "Hotkey Support",
+            "Live Match Management"
+          ],
+          "softwareVersion": "Beta",
+          "downloadUrl": "https://esportsdash.com/downloads"
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "Git Productions",
+          "url": "https://esportsdash.com"
+        },
+        "inLanguage": "en-US",
+        "keywords": [
+          "esports overlay documentation",
+          "scoreboard tool guide",
+          "OBS integration tutorial",
+          "vMix integration guide",
+          "esports broadcasting software",
+          "tournament management tool",
+          "live score tracking",
+          "custom esports overlays"
+        ]
+      }
+    ]
+
+  };
+
   return (
     <html
       // Not required, but good for SEO
