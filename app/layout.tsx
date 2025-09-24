@@ -51,7 +51,34 @@ export const metadata = {
   },
 }
 
+const CTAButton = () => {
 
+  return (
+    <>
+      <Link
+        title='Download Latest Version of Esports Dash'
+        href="http://esportsdash.com/downloads/fetch?type=app"
+        target="_blank"
+        aria-label="Download Esports Dash"
+      >
+        <div style={{
+          padding: '0.5rem 1rem',
+          backgroundColor: '#0066ffff', 
+          color: 'white',
+          borderRadius: '0.375rem', 
+          fontWeight: '600',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          transition: 'background-color 0.3s',
+        }}
+        >
+          Download
+        </div>
+      </Link>
+    </>
+  );
+};
 
 
 const banner = <Banner storageKey="esportsdash-docs-construction-notice-1">
@@ -74,6 +101,9 @@ const navbar = (
     }
     logoLink="/"
   >
+
+
+
     <Link
       href={socialLinks.twitter.href}
       target="_blank"
@@ -88,6 +118,8 @@ const navbar = (
     >
       {socialLinks.youtube.icon}
     </Link>
+
+    {/* <CTAButton /> */}
   </Navbar>
 )
 
