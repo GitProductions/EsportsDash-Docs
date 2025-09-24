@@ -6,6 +6,7 @@ import Link from "next/link";
 import { socialLinks } from './data/socialLinks'
 
 import { GoogleAnalytics } from '@next/third-parties/google'
+import Script from 'next/script';
 
 
 
@@ -316,6 +317,12 @@ export default async function RootLayout({ children }) {
         <link rel="shortcut icon" href="/images/general/icon_128.png" />
         {/* Your additional tags should be passed as `children` of `<Head>` element */}
       </Head>
+
+      <Script
+        id="schema-org-graph"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       <body>
 
