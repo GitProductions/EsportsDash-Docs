@@ -16,7 +16,7 @@ import Script from 'next/script';
 export const metadata = {
   // title: 'Documentation | EsportsDash',
   title: {
-    template: '%s - Documentation | EsportsDash',
+    template: '%s | EsportsDash Docs',
     default: 'Documentation - EsportsDash',
   },
   alternates: {
