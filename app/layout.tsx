@@ -34,7 +34,7 @@ export const metadata = {
     'live streaming esports',
     'real-time scorekeeping',
   ],
-  description: 'Guides and Documentation for EsportsDash - the professional scoreboard and streaming toolkit for esports broadcasters, tournament organizers, and content creators.',
+  description: 'EsportsDash tools for broadcasters and organizers with custom overlays, OBS integration, and score tracking.',
   metadataBase: new URL('https://docs.esportsdash.com'),
   openGraph: {
     images: [
