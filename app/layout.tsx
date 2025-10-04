@@ -37,6 +37,7 @@ export const metadata = {
   description: 'EsportsDash tools for broadcasters and organizers with custom overlays, OBS integration, and score tracking.',
   metadataBase: new URL('https://docs.esportsdash.com'),
   openGraph: {
+    url: 'https://docs.esportsdash.com',
     images: [
       {
         url: '/images/general/esportsdash-docs.jpg',
