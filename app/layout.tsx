@@ -38,6 +38,9 @@ export const metadata = {
   metadataBase: new URL('https://docs.esportsdash.com'),
   openGraph: {
     url: 'https://docs.esportsdash.com',
+    type: 'website',
+    siteName: 'EsportsDash',
+    locale: 'en_US',
     images: 
       {
         url: 'https://docs.esportsdash.com/images/general/esportsdash-docs.jpg',
@@ -57,10 +60,7 @@ export const metadata = {
     icon: '/images/general/icon_128.png',
     shortcut: '/images/general/icon_128.png',
     apple: '/images/general/icon_128.png',
-    // other: {
-    //   rel: 'apple-touch-icon-precomposed',
-    //   url: '/images/general/apple-touch-icon-precomposed.png',
-    // },
+
   },
 }
 
