@@ -61,6 +61,7 @@ export const metadata = {
     shortcut: '/images/general/icon_128.png',
     apple: '/images/general/icon_128.png',
 
+
   },
 }
 
