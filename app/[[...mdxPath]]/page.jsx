@@ -14,6 +14,8 @@ export async function generateMetadata(props) {
         metadata.openGraph = {
             ...metadata.openGraph,
             url: `https://docs.esportsdash.com${ogPath}`,
+            type: 'website',
+            
             
             images:
             {
