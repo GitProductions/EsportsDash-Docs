@@ -13,7 +13,15 @@ export async function generateMetadata(props) {
     if (ogPath) {
         metadata.openGraph = {
             ...metadata.openGraph,
-            url: `https://docs.esportsdash.com${ogPath}`
+            url: `https://docs.esportsdash.com${ogPath}`,
+            
+            images:
+            {
+                url: 'https://docs.esportsdash.com/images/general/esportsdash-docs.jpg',
+                width: 1200,
+                height: 630,
+                alt: 'Esports Dash Documentation',
+            },
         }
 
         // adding canoncial url 
