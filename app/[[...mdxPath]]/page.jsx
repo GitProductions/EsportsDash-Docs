@@ -5,7 +5,7 @@ export const generateStaticParams = generateStaticParamsFor('mdxPath')
 
 export async function generateMetadata(props) {
     const params = await props.params
-    
+
     const { metadata } = await importPage(params.mdxPath)
 
     // lets dynamically create og path/url for each page based on its url - I see no purpose to hard code this into each post
@@ -14,6 +14,12 @@ export async function generateMetadata(props) {
         metadata.openGraph = {
             ...metadata.openGraph,
             url: `https://docs.esportsdash.com${ogPath}`
+        }
+
+        // adding canoncial url 
+        metadata.alternates = {
+            canonical: `https://docs.esportsdash.com${ogPath}`,
+            ...metadata.alternates,
         }
     }
 
