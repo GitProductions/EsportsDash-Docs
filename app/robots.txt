@@ -1,3 +1,2 @@
 User-agent: *
 Sitemap: https://docs.esportsdash.com/sitemap.xml
-Disallow:
