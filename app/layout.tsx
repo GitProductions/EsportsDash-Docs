@@ -38,18 +38,29 @@ export const metadata = {
   metadataBase: new URL('https://docs.esportsdash.com'),
   openGraph: {
     url: 'https://docs.esportsdash.com',
-    images: [
+    images: 
       {
-        url: '/images/general/esportsdash-docs.jpg',
+        url: 'https://docs.esportsdash.com/images/general/esportsdash-docs.jpg',
         width: 1200,
         height: 630,
         alt: 'Esports Dash Documentation',
       },
-    ],
+    
   },
   twitter: {
     card: 'summary_large_image',
     images: ['/images/general/esportsdash-docs.jpg'],
+  },
+
+
+   icons: {
+    icon: '/images/general/icon_128.png',
+    shortcut: '/images/general/icon_128.png',
+    apple: '/images/general/icon_128.png',
+    // other: {
+    //   rel: 'apple-touch-icon-precomposed',
+    //   url: '/images/general/apple-touch-icon-precomposed.png',
+    // },
   },
 }
 
@@ -315,8 +326,10 @@ export default async function RootLayout({ children }) {
 
 
 
-        <link rel="shortcut icon" href="/images/general/icon_128.png" />
-        {/* Your additional tags should be passed as `children` of `<Head>` element */}
+        {/* <link rel="shortcut icon" href="/images/general/icon_128.png" />
+        <link rel="apple-touch-icon" href="/images/general/icon_128.png" /> */}
+
+
       </Head>
 
       <Script
